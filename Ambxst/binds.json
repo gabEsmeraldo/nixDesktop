@@ -2227,6 +2227,56 @@
                 }
             ],
             "name": "VSCODE"
+        },
+        {
+            "actions": [
+                {
+                    "argument": "wpctl set-default 97 && \nnotify-send \"Output Changed\" \"IEM\"\n",
+                    "compositor": {
+                        "layouts": [
+                        ],
+                        "type": "hyprland"
+                    },
+                    "dispatcher": "exec",
+                    "flags": ""
+                }
+            ],
+            "enabled": true,
+            "keys": [
+                {
+                    "key": "1",
+                    "modifiers": [
+                        "SUPER",
+                        "CTRL"
+                    ]
+                }
+            ],
+            "name": "IEM"
+        },
+        {
+            "actions": [
+                {
+                    "argument": "wpctl set-default 98 && \nnotify-send \"Output Changed\" \"Caixa de Som\"\n",
+                    "compositor": {
+                        "layouts": [
+                        ],
+                        "type": "hyprland"
+                    },
+                    "dispatcher": "exec",
+                    "flags": ""
+                }
+            ],
+            "enabled": true,
+            "keys": [
+                {
+                    "key": "2",
+                    "modifiers": [
+                        "SUPER",
+                        "CTRL"
+                    ]
+                }
+            ],
+            "name": "Caixa de Som"
         }
     ],
     "defaultAmbxstBinds": {

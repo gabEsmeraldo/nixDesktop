@@ -12,7 +12,7 @@ in
     theme = spicePkgs.themes.comfy;
     
     # Escolhe o esquema de cores padrão do tema (pode ser "Comfy", "Rose Pine", etc)
-    colorScheme = "rose-pine";
+    colorScheme = "Velvet";
 
     enabledExtensions = with spicePkgs.extensions; [
       adblock
