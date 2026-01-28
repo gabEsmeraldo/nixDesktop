@@ -1,0 +1,13 @@
+# Ignore everything by default
+*
+
+# Allow the two directories
+!Ambxst/
+!NixOS/
+
+# Allow all files and subdirectories inside them
+!Ambxst/**
+!NixOS/**
+
+# Allow the directories themselves (Git needs this)
+!.gitignore

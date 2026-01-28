@@ -1,0 +1,21 @@
+{
+    "availableOnFullscreen": false,
+    "barColor": [
+        [
+            "surface",
+            0
+        ]
+    ],
+    "enableFirefoxPlayer": false,
+    "hoverRegionHeight": 8,
+    "hoverToReveal": true,
+    "launcherIcon": "",
+    "launcherIconFullTint": true,
+    "launcherIconSize": 18,
+    "launcherIconTint": true,
+    "pinnedOnStartup": false,
+    "position": "top",
+    "screenList": [
+    ],
+    "showPinButton": true
+}
