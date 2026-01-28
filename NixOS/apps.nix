@@ -23,6 +23,7 @@
     libgcc
     gcc
     adwaita-qt
+    libsecret
 
     # --- Editors & IDEs ---
     vim
@@ -62,8 +63,10 @@
     qimgv
     joplin-desktop
     multiviewer-for-f1
+    yt-dlp
 
     #Desktop only
+    gamescope
     suwayomi-server
     pavucontrol
     openrgb-with-all-plugins

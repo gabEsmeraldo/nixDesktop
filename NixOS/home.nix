@@ -72,9 +72,14 @@
     settings = {
       user.name = "gabesmeraldo";
       user.email = "gabrielcesmeraldo@gmail.com";
-
-      credential.helper = "cache --timeout=31536000";
+      credential.helper = "${
+          pkgs.git.override { withLibsecret = true; }
+        }/bin/git-credential-libsecret";
     };
+  };
+
+  home.sessionVariables = {
+    SSH_AUTH_SOCK = "$XDG_RUNTIME_DIR/keyring/ssh";
   };
 
   programs.bash = {
