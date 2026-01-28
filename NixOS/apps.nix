@@ -8,9 +8,9 @@
     kitty
     # alacritty
     zsh
-    # git
+    git
     wget
-    xfce.thunar
+    thunar
     yazi
     kdePackages.ark
     bibata-cursors
@@ -64,6 +64,8 @@
     joplin-desktop
     multiviewer-for-f1
     yt-dlp
+    davinci-resolve
+    easyeffects
 
     #Desktop only
     gamescope

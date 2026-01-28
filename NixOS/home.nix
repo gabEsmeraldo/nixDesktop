@@ -66,17 +66,17 @@
     };
   };
 
-  programs.git = {
-    enable = true;
+  # programs.git = {
+  #   enable = true;
 
-    settings = {
-      user.name = "gabesmeraldo";
-      user.email = "gabrielcesmeraldo@gmail.com";
-      credential.helper = "${
-          pkgs.git.override { withLibsecret = true; }
-        }/bin/git-credential-libsecret";
-    };
-  };
+  #   settings = {
+  #     user.name = "gabesmeraldo";
+  #     user.email = "gabrielcesmeraldo@gmail.com";
+  #     credential.helper = "${
+  #         pkgs.git.override { withLibsecret = true; }
+  #       }/bin/git-credential-libsecret";
+  #   };
+  # };
 
   home.sessionVariables = {
     SSH_AUTH_SOCK = "$XDG_RUNTIME_DIR/keyring/ssh";
