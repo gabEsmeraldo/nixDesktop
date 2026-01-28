@@ -68,12 +68,12 @@
 
   programs.git = {
     enable = true;
-    userName  = "gabesmeraldo";
-    userEmail = "gabrielcesmeraldo@gmail.com";
-  
-    extraConfig = {
-      credential.helper = "store";
-      init.defaultBranch = "main";
+
+    settings = {
+      user.name = "gabesmeraldo";
+      user.email = "gabrielcesmeraldo@gmail.com";
+
+      credential.helper = "cache --timeout=31536000";
     };
   };
 

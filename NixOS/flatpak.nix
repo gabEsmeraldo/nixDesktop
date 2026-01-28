@@ -4,8 +4,8 @@ let
   grep = pkgs.gnugrep;
   # 1. Declare the Flatpaks you *want* on your system
   desiredFlatpaks = [
+    "app.zen_browser.zen"
     "org.kde.krita"
-    "app.zen-browser.zen"
     "md.obsidian.Obsidian"
     "org.vinegarhq.Sober"
     "com.valvesoftware.Steam"
