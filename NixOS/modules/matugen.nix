@@ -15,8 +15,10 @@
   output_path = '~/.config/kitty/colors.conf'
   post_hook = 'pkill -SIGUSR1 kitty'
 
-  [templates.vencord]
-  input_path = '${../templates/vencord.css}'
-  output_path = '~/.config/vesktop/themes/matugen.css'
 '';
 }
+
+
+  # [templates.vencord]
+  # input_path = '${../templates/vencord.css}'
+  # output_path = '~/.config/vesktop/themes/matugen.css'

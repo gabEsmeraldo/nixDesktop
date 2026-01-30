@@ -82,17 +82,17 @@
     SSH_AUTH_SOCK = "$XDG_RUNTIME_DIR/keyring/ssh";
   };
 
-  programs.bash = {
-    enable = false;
-    shellAliases = {
-      btw = "echo hyprland btw";
-    };
-    profileExtra = ''
-      if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
-        exec hyprland
-      fi
-    '';
-  };
+  # programs.bash = {
+  #   enable = false;
+  #   shellAliases = {
+  #     btw = "echo hyprland btw";
+  #   };
+  #   profileExtra = ''
+  #     if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
+  #       exec hyprland
+  #     fi
+  #   '';
+  # };
 
   wayland.windowManager.hyprland = {
     enable = true;

@@ -39,8 +39,8 @@
     # Java Versions (Using lowPrio to prevent jexec collisions)
     openjdk21                  # Primary version
     (lib.lowPrio openjdk17)    # Secondary
-    (lib.lowPrio openjdk8)     # Legacy
-    texliveTeTeX
+    (lib.lowPrio jdk8_headless)     # Legacy
+    texliveFull
     openssh
     mysql-workbench
     mysql84
@@ -49,6 +49,7 @@
     # --- Communication & Social ---
     discord
     vesktop
+    vencord
     # spotify
     anytype
     joplin-desktop
@@ -65,7 +66,9 @@
     multiviewer-for-f1
     yt-dlp
     davinci-resolve
-    easyeffects
+    # easyeffects
+    wine
+    kdePackages.partitionmanager
 
     #Desktop only
     gamescope
@@ -81,5 +84,7 @@
     qbittorrent
     nicotine-plus
     prismlauncher
+    waywall
+
   ];
 }

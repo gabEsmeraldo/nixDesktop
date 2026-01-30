@@ -9,6 +9,7 @@ let
     "md.obsidian.Obsidian"
     "org.vinegarhq.Sober"
     "com.valvesoftware.Steam"
+    "org.gnome.Calculator"
   ];
 in {
   system.userActivationScripts.flatpakManagement = {
