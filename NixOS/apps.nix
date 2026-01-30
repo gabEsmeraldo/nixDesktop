@@ -85,6 +85,7 @@
     nicotine-plus
     prismlauncher
     waywall
+    autokey
 
   ];
 }
