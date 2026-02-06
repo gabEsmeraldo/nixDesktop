@@ -47,6 +47,7 @@
 
   programs.hyprland = {
     enable = true;
+    withUWSM = false;
     xwayland.enable = true;
   };
 
@@ -62,6 +63,10 @@
     trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
   };
 
+  services.udev.extraRules = ''
+    KERNEL=="ttyUSB0", MODE="0666", GROUP="dialout"
+  '';
+
   #kde
   services = {
     desktopManager.plasma6.enable = true;
@@ -70,12 +75,6 @@
   # Enable OpenGL
   hardware.graphics = {
     enable = true;
-  };
-
-  services.displayManager.ly = {
-    settings = {
-      default_session = "Hyprland";
-    };
   };
 
   services.gnome.gnome-keyring.enable = true;
@@ -177,11 +176,19 @@
   users.users.gabzu = {
     isNormalUser = true;
     description = "gabzu";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout"];
   };
 
   programs.firefox.enable = true;
-  services.displayManager.ly.enable = true;
+
+  services.displayManager.ly = {
+    enable = true;
+    # Use 'settings' instead of 'extraConfig'
+    settings = {
+      save = true;
+      load = true;
+    };
+  };
 
   environment.systemPackages = with pkgs; [
     vim
