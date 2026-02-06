@@ -49,12 +49,13 @@
     # --- Communication & Social ---
     discord
     vesktop
-    vencord
+    # vencord
     # spotify
     anytype
     joplin-desktop
     # steam
     vlc
+    telegram-desktop
 
     # Life
     libreoffice
@@ -72,7 +73,6 @@
 
     #Desktop only
     gamescope
-    suwayomi-server
     pavucontrol
     openrgb-with-all-plugins
     deepcool-digital-linux
@@ -84,8 +84,11 @@
     qbittorrent
     nicotine-plus
     prismlauncher
-    waywall
-    autokey
+    # mangayomi
+    blender
+    fooyin
 
+    #delete
+    google-chrome
   ];
 }

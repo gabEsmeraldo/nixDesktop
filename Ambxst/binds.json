@@ -65,7 +65,8 @@
                 "key": "C",
                 "modifiers": [
                     "SUPER",
-                    "SHIFT"
+                    "SHIFT",
+                    "CTRL"
                 ]
             },
             "lens": {
@@ -2231,7 +2232,7 @@
         {
             "actions": [
                 {
-                    "argument": "wpctl set-default 96 && \nnotify-send \"Output Changed\" \"IEM\"\n",
+                    "argument": "wpctl set-default 89 && \nnotify-send \"Output Changed\" \"IEM\"\n",
                     "compositor": {
                         "layouts": [
                         ],
@@ -2256,7 +2257,7 @@
         {
             "actions": [
                 {
-                    "argument": "wpctl set-default 97 && \nnotify-send \"Output Changed\" \"Caixa de Som\"\n",
+                    "argument": "wpctl set-default 90 && \nnotify-send \"Output Changed\" \"Caixa de Som\"\n",
                     "compositor": {
                         "layouts": [
                         ],
