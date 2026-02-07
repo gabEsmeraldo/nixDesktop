@@ -1,61 +1,53 @@
 {
     "ambxst": {
+        "assistant": {
+            "argument": "ambxst run assistant",
+            "dispatcher": "exec",
+            "key": "",
+            "modifiers": [
+            ]
+        },
+        "clipboard": {
+            "argument": "ambxst run clipboard",
+            "dispatcher": "exec",
+            "key": "V",
+            "modifiers": [
+                "SUPER"
+            ]
+        },
         "dashboard": {
-            "assistant": {
-                "argument": "ambxst run dashboard-assistant",
-                "dispatcher": "exec",
-                "key": "",
-                "modifiers": [
-                ]
-            },
-            "clipboard": {
-                "argument": "ambxst run dashboard-clipboard",
-                "dispatcher": "exec",
-                "key": "V",
-                "modifiers": [
-                    "SUPER"
-                ]
-            },
-            "emoji": {
-                "argument": "ambxst run dashboard-emoji",
-                "dispatcher": "exec",
-                "key": "PERIOD",
-                "modifiers": [
-                    "SUPER"
-                ]
-            },
-            "notes": {
-                "argument": "ambxst run dashboard-notes",
-                "dispatcher": "exec",
-                "key": "N",
-                "modifiers": [
-                    "SUPER"
-                ]
-            },
-            "tmux": {
-                "argument": "ambxst run dashboard-tmux",
-                "dispatcher": "exec",
-                "key": "",
-                "modifiers": [
-                ]
-            },
-            "wallpapers": {
-                "argument": "ambxst run dashboard-wallpapers",
-                "dispatcher": "exec",
-                "key": "COMMA",
-                "modifiers": [
-                    "SUPER"
-                ]
-            },
-            "widgets": {
-                "argument": "ambxst run dashboard-widgets",
-                "dispatcher": "exec",
-                "flags": "r",
-                "key": "Super_L",
-                "modifiers": [
-                    "SUPER"
-                ]
-            }
+            "argument": "ambxst run dashboard",
+            "dispatcher": "exec",
+            "flags": "",
+            "key": "D",
+            "modifiers": [
+                "SUPER"
+            ]
+        },
+        "emoji": {
+            "argument": "ambxst run emoji",
+            "dispatcher": "exec",
+            "key": "PERIOD",
+            "modifiers": [
+                "SUPER"
+            ]
+        },
+        "launcher": {
+            "argument": "ambxst run launcher",
+            "dispatcher": "exec",
+            "flags": "r",
+            "key": "A",
+            "modifiers": [
+                "SUPER"
+            ]
+        },
+        "notes": {
+            "argument": "ambxst run notes",
+            "dispatcher": "exec",
+            "key": "N",
+            "modifiers": [
+                "SUPER"
+            ]
         },
         "system": {
             "config": {
@@ -156,6 +148,21 @@
                     "SUPER"
                 ]
             }
+        },
+        "tmux": {
+            "argument": "ambxst run tmux",
+            "dispatcher": "exec",
+            "key": "",
+            "modifiers": [
+            ]
+        },
+        "wallpapers": {
+            "argument": "ambxst run wallpapers",
+            "dispatcher": "exec",
+            "key": "COMMA",
+            "modifiers": [
+                "SUPER"
+            ]
         }
     },
     "custom": [
@@ -689,7 +696,7 @@
             "enabled": true,
             "keys": [
                 {
-                    "key": "mouse_down",
+                    "key": "mouse_up",
                     "modifiers": [
                         "SUPER"
                     ]
@@ -713,7 +720,7 @@
             "enabled": true,
             "keys": [
                 {
-                    "key": "mouse_up",
+                    "key": "mouse_down",
                     "modifiers": [
                         "SUPER"
                     ]
@@ -2281,9 +2288,9 @@
         }
     ],
     "defaultAmbxstBinds": {
-        "dashboard": {
+        "ambxst": {
             "assistant": {
-                "argument": "ambxst run dashboard-assistant",
+                "argument": "ambxst run assistant",
                 "dispatcher": "exec",
                 "flags": "",
                 "key": "A",
@@ -2292,7 +2299,7 @@
                 ]
             },
             "clipboard": {
-                "argument": "ambxst run dashboard-clipboard",
+                "argument": "ambxst run clipboard",
                 "dispatcher": "exec",
                 "flags": "",
                 "key": "V",
@@ -2300,8 +2307,17 @@
                     "SUPER"
                 ]
             },
+            "dashboard": {
+                "argument": "ambxst run dashboard",
+                "dispatcher": "exec",
+                "flags": "",
+                "key": "D",
+                "modifiers": [
+                    "SUPER"
+                ]
+            },
             "emoji": {
-                "argument": "ambxst run dashboard-emoji",
+                "argument": "ambxst run emoji",
                 "dispatcher": "exec",
                 "flags": "",
                 "key": "PERIOD",
@@ -2309,8 +2325,17 @@
                     "SUPER"
                 ]
             },
+            "launcher": {
+                "argument": "ambxst run launcher",
+                "dispatcher": "exec",
+                "flags": "r",
+                "key": "Super_L",
+                "modifiers": [
+                    "SUPER"
+                ]
+            },
             "notes": {
-                "argument": "ambxst run dashboard-notes",
+                "argument": "ambxst run notes",
                 "dispatcher": "exec",
                 "flags": "",
                 "key": "N",
@@ -2319,7 +2344,7 @@
                 ]
             },
             "tmux": {
-                "argument": "ambxst run dashboard-tmux",
+                "argument": "ambxst run tmux",
                 "dispatcher": "exec",
                 "flags": "",
                 "key": "T",
@@ -2328,19 +2353,10 @@
                 ]
             },
             "wallpapers": {
-                "argument": "ambxst run dashboard-wallpapers",
+                "argument": "ambxst run wallpapers",
                 "dispatcher": "exec",
                 "flags": "",
                 "key": "COMMA",
-                "modifiers": [
-                    "SUPER"
-                ]
-            },
-            "widgets": {
-                "argument": "ambxst run dashboard-widgets",
-                "dispatcher": "exec",
-                "flags": "r",
-                "key": "Super_L",
                 "modifiers": [
                     "SUPER"
                 ]

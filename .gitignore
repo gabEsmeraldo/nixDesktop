@@ -2,11 +2,11 @@
 *
 
 # Allow the two directories
-!Ambxst/
+!ambxst/
 !NixOS/
 
 # Allow all files and subdirectories inside them
-!Ambxst/**
+!ambxst/**
 !NixOS/**
 
 # Allow the directories themselves (Git needs this)

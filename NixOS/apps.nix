@@ -11,6 +11,8 @@
     git
     wget
     thunar
+    thunar-volman
+    thunar-archive-plugin
     yazi
     kdePackages.ark
     bibata-cursors
