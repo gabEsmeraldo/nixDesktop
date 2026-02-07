@@ -20,6 +20,27 @@
   #  imports = [ ./home.nix ];
   # };
 
+  services.hardware.openrgb = { 
+    enable = true; 
+    package = pkgs.openrgb-with-all-plugins; 
+    motherboard = "amd"; 
+    server = { 
+      port = 6742;
+    }; 
+  };
+
+  services.hardware.deepcool-digital-linux.enable = true;
+  services.udev.extraRules = ''
+    # Intel RAPL energy usage file
+    ACTION=="add", SUBSYSTEM=="powercap", KERNEL=="intel-rapl:0", RUN+="${pkgs.coreutils}/bin/chmod 444 /sys/class/powercap/intel-rapl/intel-rapl:0/energy_uj"
+
+    # DeepCool HID raw devices
+    SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3633", MODE="0666"
+
+    # CH510 MESH DIGITAL
+    SUBSYSTEM=="hidraw", ATTRS{idVendor}=="34d3", ATTRS{idProduct}=="1100", MODE="0666"
+  '';
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -62,10 +83,6 @@
     substituters = ["https://hyprland.cachix.org"];
     trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
   };
-
-  services.udev.extraRules = ''
-    KERNEL=="ttyUSB0", MODE="0666", GROUP="dialout"
-  '';
 
   #kde
   services = {
@@ -176,7 +193,7 @@
   users.users.gabzu = {
     isNormalUser = true;
     description = "gabzu";
-    extraGroups = [ "networkmanager" "wheel" "dialout"];
+    extraGroups = [ "networkmanager" "wheel" "dialout" "i2c"];
   };
 
   programs.firefox.enable = true;

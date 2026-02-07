@@ -76,9 +76,9 @@
     #Desktop only
     gamescope
     pavucontrol
-    openrgb-with-all-plugins
     deepcool-digital-linux
     filezilla
+    openrgb-with-all-plugins
     heroic
     hydralauncher
     lutris
