@@ -12,3 +12,6 @@
 ```rm  ~/.config/NixOS/hardware-configuration.nix```
 ### copying the generated one
 ```cp /etc/nixos/hardware-configuration.nix ~/.config/NixOS/```
+
+## Installing Hyprland Shell
+```nix profile add github:Axenide/Ambxst```
