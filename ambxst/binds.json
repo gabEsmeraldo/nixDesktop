@@ -992,7 +992,7 @@
         {
             "actions": [
                 {
-                    "argument": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 10%+",
+                    "argument": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+",
                     "compositor": {
                         "layouts": [
                         ],
@@ -1015,7 +1015,7 @@
         {
             "actions": [
                 {
-                    "argument": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 10%-",
+                    "argument": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%-",
                     "compositor": {
                         "layouts": [
                         ],
@@ -2285,6 +2285,30 @@
                 }
             ],
             "name": "Caixa de Som"
+        },
+        {
+            "actions": [
+                {
+                    "argument": "md.obsidian.Obsidian",
+                    "compositor": {
+                        "layouts": [
+                        ],
+                        "type": "hyprland"
+                    },
+                    "dispatcher": "exec",
+                    "flags": ""
+                }
+            ],
+            "enabled": true,
+            "keys": [
+                {
+                    "key": "Z",
+                    "modifiers": [
+                        "SUPER"
+                    ]
+                }
+            ],
+            "name": "Obsidian"
         }
     ],
     "defaultAmbxstBinds": {
