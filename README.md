@@ -2,7 +2,7 @@
 ### Enter .config folder
 ```cd .config```
 ### clone the config
-```nix-shell -p git```
+```nix-shell -p git```<br/>
 ```git clone https://github.com/gabesmeraldo/NixDesktop.git .```
 ### Switch
 ```sudo nixos-rebuild switch --flake ~/.config/NixOS#asphodelus```
