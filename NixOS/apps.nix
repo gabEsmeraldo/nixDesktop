@@ -50,7 +50,7 @@
 
     # --- Communication & Social ---
     discord
-    vesktop
+    # vesktop
     # vencord
     # spotify
     anytype

@@ -152,45 +152,6 @@
     ".config/hypr/wallpaper.conf".source = ./config/hypr/wallpaper.conf;
   };
 
-  home.file.".config/wireplumber/main.lua.d/50-disable-session-suspend.lua".text = ''
-    table.insert (alsa_monitor.rules, {
-      matches = {
-        {
-          -- Matches all sources.
-          { "node.name", "matches", "alsa_input.*" },
-        },
-        {
-          -- Matches all sinks.
-          { "node.name", "matches", "alsa_output.*" },
-        },
-      },
-      apply_properties = {
-        ["session.suspend-timeout-seconds"] = 86400,  -- 0 disables suspend - on some systems this won't work and you need to set a high value like 86400 (1 day) instead
-      },
-    })  
-  '';
-
-  # home.file.".config/wireplumber/wireplumber.conf.d/51-disable-suspension.conf".text = ''
-  #   monitor.alsa.rules = [
-  #     {
-  #       matches = [
-  #         {
-  #           node.name = "~alsa_input.*"
-  #         }
-  #         {
-  #           node.name = "~alsa_output.*"
-  #         }
-  #       ]
-  #       actions = {
-  #         update-props = {
-  #           # Setting this to 0 in 0.5+ officially disables suspend
-  #           session.suspend-on-idle = false
-  #         }
-  #       }
-  #     }
-  #   ]
-  # '';
-
 
   # home.file.".config/hypr".source = ./config/hypr;
   home.file.".config/fastfetch".source = ./config/fastfetch;
