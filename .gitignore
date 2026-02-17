@@ -11,4 +11,6 @@
 
 # Allow the directories themselves (Git needs this)
 !.gitignore
-!README
+!README.md
+!readme
+!.md
