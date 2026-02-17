@@ -2,6 +2,7 @@
 
 {
   imports = [
+    inputs.nixcord.homeModules.nixcord
     ./zsh.nix
     ./apps.nix
     ./modules/matugen.nix
@@ -63,6 +64,25 @@
     enable = true;
     settings = {
       shell = "zsh";
+    };
+  };
+
+  programs.nixcord = {
+    enable = true;
+    user = "gabzu";
+    discord.vencord.enable = true;
+    config = {
+      frameless = true;
+      plugins = {
+        clientTheme = {
+          enable = true;
+          color = "920500";
+        };
+        betterFolders.enable = true;
+        callTimer.enable = true;
+        fakeNitro.enable = true;
+        roleColorEverywhere.enable = true;
+      };
     };
   };
 

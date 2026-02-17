@@ -28,7 +28,7 @@
       port = 6742;
     }; 
   };
-
+  
   services.hardware.deepcool-digital-linux.enable = true;
   services.udev.extraRules = ''
     # Intel RAPL energy usage file

@@ -16,6 +16,8 @@
       url = "github:shezdy/hyprsplit";
       inputs.hyprland.follows = "hyprland";
     };
+
+    nixcord.url = "github:FlameFlag/nixcord";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:

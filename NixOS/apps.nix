@@ -49,7 +49,7 @@
     
 
     # --- Communication & Social ---
-    discord
+    # discord
     # vesktop
     # vencord
     # spotify
@@ -89,8 +89,7 @@
     # mangayomi
     blender
     fooyin
-
-    #delete
-    google-chrome
+    # stremio
+    #blockbench
   ];
 }

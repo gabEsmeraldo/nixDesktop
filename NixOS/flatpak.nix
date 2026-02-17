@@ -10,6 +10,7 @@ let
     "org.vinegarhq.Sober"
     "com.valvesoftware.Steam"
     "org.gnome.Calculator"
+    "com.stremio.Stremio"
   ];
 in {
   system.userActivationScripts.flatpakManagement = {
