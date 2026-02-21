@@ -41,6 +41,7 @@
     # Java Versions (Using lowPrio to prevent jexec collisions)
     openjdk21                  # Primary version
     (lib.lowPrio openjdk17)    # Secondary
+    (lib.lowPrio jdk25_headless)    # Tertiary
     (lib.lowPrio jdk8_headless)     # Legacy
     texliveFull
     openssh
@@ -88,8 +89,8 @@
     prismlauncher
     # mangayomi
     blender
+    unityhub
     fooyin
-    # stremio
     #blockbench
   ];
 }
