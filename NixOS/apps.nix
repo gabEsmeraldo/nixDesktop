@@ -87,10 +87,13 @@
     qbittorrent
     nicotine-plus
     prismlauncher
+    waywall
     # mangayomi
     blender
     unityhub
     fooyin
     #blockbench
+
+    ladybird
   ];
 }

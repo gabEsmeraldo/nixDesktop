@@ -11,6 +11,7 @@ let
     "com.valvesoftware.Steam"
     "org.gnome.Calculator"
     "com.stremio.Stremio"
+    "com.google.Chrome"
   ];
 in {
   system.userActivationScripts.flatpakManagement = {
