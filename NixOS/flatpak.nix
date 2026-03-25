@@ -12,6 +12,8 @@ let
     "org.gnome.Calculator"
     "com.stremio.Stremio"
     "com.google.Chrome"
+    "io.beekeeperstudio.Studio"
+    "rest.insomnia.Insomnia"
   ];
 in {
   system.userActivationScripts.flatpakManagement = {

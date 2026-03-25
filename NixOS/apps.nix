@@ -47,6 +47,10 @@
     openssh
     mysql-workbench
     mysql84
+    docker
+    docker-compose
+    beamMinimal28Packages.elixir_1_19
+    erlang
     
 
     # --- Communication & Social ---
@@ -59,6 +63,7 @@
     # steam
     vlc
     telegram-desktop
+    obs-studio
 
     # Life
     libreoffice

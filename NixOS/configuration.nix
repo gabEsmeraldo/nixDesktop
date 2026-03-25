@@ -19,6 +19,18 @@
   #  nixpkgs.config.allowUnfree = true; 
   #  imports = [ ./home.nix ];
   # };
+  
+  # wake on lan
+  networking = {
+    interfaces = {
+      enp5s0 = {
+        wakeOnLan.enable = true;
+      };
+    };
+    firewall = {
+      allowedUDPPorts = [ 9 ];
+    };
+  };
 
   services.hardware.openrgb = { 
     enable = true; 
@@ -28,6 +40,8 @@
       port = 6742;
     }; 
   };
+
+  virtualisation.docker.enable = true;
   
   services.hardware.deepcool-digital-linux.enable = true;
   services.udev.extraRules = ''
@@ -236,7 +250,7 @@
   users.users.gabzu = {
     isNormalUser = true;
     description = "gabzu";
-    extraGroups = [ "networkmanager" "wheel" "dialout" "i2c"];
+    extraGroups = [ "networkmanager" "wheel" "dialout" "i2c" "docker"];
   };
 
   programs.firefox.enable = true;
