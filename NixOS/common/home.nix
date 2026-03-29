@@ -118,8 +118,8 @@
   };
 
   # Shared config files
-  home.file.".config/fastfetch".source = ../config/fastfetch;
-  xdg.configFile."kitty/kitty.conf".source = ../config/kitty/kitty.conf;
+  home.file.".config/fastfetch".source = ./fastfetch;
+  xdg.configFile."kitty/kitty.conf".source = ./kitty/kitty.conf;
 
   # Thunar settings
   xdg.configFile."Thunar/thunarrc".text = ''

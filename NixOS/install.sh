@@ -78,39 +78,28 @@ if ! command -v git &> /dev/null; then
     sudo nix-env -iA nixos.git
 fi
 
-# Backup existing .config if it has content
-if [ -d "$CONFIG_DIR" ] && [ "$(ls -A $CONFIG_DIR 2>/dev/null)" ]; then
-    print_warning "~/.config directory already exists with content"
-    read -p "Do you want to backup and replace it? [y/N]: " confirm
-    if [[ $confirm =~ ^[Yy]$ ]]; then
-        BACKUP_DIR="$HOME/.config.backup.$(date +%Y%m%d_%H%M%S)"
-        print_step "Backing up existing .config to $BACKUP_DIR"
-        mv "$CONFIG_DIR" "$BACKUP_DIR"
-    else
-        print_warning "Proceeding without backup. Existing files may be overwritten."
-    fi
-fi
-
-# Clone the repository
-print_step "Cloning configuration repository..."
+# Ensure .config exists
 mkdir -p "$CONFIG_DIR"
 
-if [ ! -d "$CONFIG_DIR/.git" ]; then
-    # Clone into a temp dir first, then move contents
+# Check if .config is already our git repo
+if [ -d "$CONFIG_DIR/.git" ]; then
+    print_step "Config repo already exists, pulling latest..."
+    cd "$CONFIG_DIR"
+    git pull
+else
+    # Clone to temp dir, then copy contents into .config (merging with existing files)
+    print_step "Cloning configuration repository..."
     TEMP_DIR=$(mktemp -d)
     git clone "$REPO_URL" "$TEMP_DIR"
 
-    # Move all contents (including hidden files) to .config
+    # Copy all contents (including hidden files like .git) into .config
+    print_step "Copying config files to ~/.config (merging with existing)..."
     shopt -s dotglob
-    cp -r "$TEMP_DIR"/* "$CONFIG_DIR/" 2>/dev/null || true
+    cp -r "$TEMP_DIR"/* "$CONFIG_DIR/"
     shopt -u dotglob
 
     rm -rf "$TEMP_DIR"
-    print_step "Repository cloned to ~/.config"
-else
-    print_step "Git repo already exists in ~/.config, pulling latest..."
-    cd "$CONFIG_DIR"
-    git pull
+    print_step "Configuration files installed to ~/.config"
 fi
 
 cd "$NIXOS_DIR"
