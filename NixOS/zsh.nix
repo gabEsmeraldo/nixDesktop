@@ -78,7 +78,7 @@
     # Personal Aliases [cite: 23, 25]
     shellAliases = {
       #Nix
-      rebuild = "sudo nixos-rebuild switch --flake ~/.config/NixOS#asphodelus";
+      rebuild = "sudo nixos-rebuild switch --flake ~/.config/NixOS#$(hostname)";
       clearBuilds = "sudo nix-collect-garbage -d";
 
       # System shortcuts

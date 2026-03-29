@@ -1,5 +1,5 @@
 {
-  description = "NixOS configuration for gabzu's desktop";
+  description = "NixOS configuration for gabzu's machines";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -22,29 +22,48 @@
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
   let
-    system = "x86_64-linux";
+    # Helper function to create a NixOS system
+    mkHost = { hostName, hostPath }: nixpkgs.lib.nixosSystem {
+      specialArgs = { inherit inputs; };
+
+      modules = [
+        hostPath
+        home-manager.nixosModules.home-manager
+        {
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            extraSpecialArgs = { inherit inputs; };
+            users.gabzu = import ./hosts/${hostName}/home.nix;
+          };
+          home-manager.backupFileExtension = "backup";
+        }
+      ];
+    };
   in {
     nixosConfigurations = {
-      asphodelus = nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = { inherit inputs; };
+      # Desktop (asphodelus)
+      desktop = mkHost {
+        hostName = "desktop";
+        hostPath = ./hosts/desktop;
+      };
 
-        modules = [
-          ./configuration.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              extraSpecialArgs = { inherit inputs system; };
+      # Keep old name as alias for compatibility
+      asphodelus = mkHost {
+        hostName = "desktop";
+        hostPath = ./hosts/desktop;
+      };
 
-              # --- THE FIX ---
-              # We ONLY import home.nix. We do NOT define settings here.
-              users.gabzu = import ./home.nix;
-            };
-            home-manager.backupFileExtension = "backup";
-          }
-        ];
+      # Laptop
+      laptop = mkHost {
+        hostName = "laptop";
+        hostPath = ./hosts/laptop;
+      };
+
+      # Laptop alias
+      elysium = mkHost {
+        hostName = "laptop";
+        hostPath = ./hosts/laptop;
       };
     };
   };

@@ -2,7 +2,7 @@
 { pkgs, inputs, ... }: {
   # Install the matugen package
   home.packages = [ 
-    inputs.matugen.packages.${pkgs.system}.default 
+    inputs.matugen.packages.${pkgs.stdenv.hostPlatform.system}.default 
   ];
 
   # Manually create the config file Matugen expects
