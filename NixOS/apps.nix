@@ -51,6 +51,7 @@
     docker-compose
     beamMinimal28Packages.elixir_1_19
     erlang
+    claude-code
     
 
     # --- Communication & Social ---
@@ -74,7 +75,7 @@
     joplin-desktop
     multiviewer-for-f1
     yt-dlp
-    davinci-resolve
+    # davinci-resolve
     # easyeffects
     wine
     kdePackages.partitionmanager
@@ -98,7 +99,5 @@
     unityhub
     fooyin
     #blockbench
-
-    ladybird
   ];
 }

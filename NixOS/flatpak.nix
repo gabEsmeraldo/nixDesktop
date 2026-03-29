@@ -14,6 +14,7 @@ let
     "com.google.Chrome"
     "io.beekeeperstudio.Studio"
     "rest.insomnia.Insomnia"
+    "org.kde.kdenlive"
   ];
 in {
   system.userActivationScripts.flatpakManagement = {
