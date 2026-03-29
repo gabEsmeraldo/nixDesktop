@@ -17,7 +17,8 @@
   };
   console.keyMap = "br-abnt2";
 
-  # Laptop power management
+  # Laptop power management (disable power-profiles-daemon as it conflicts with tlp)
+  services.power-profiles-daemon.enable = false;
   services.tlp = {
     enable = true;
     settings = {
