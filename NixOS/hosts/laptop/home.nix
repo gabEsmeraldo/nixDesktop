@@ -14,6 +14,7 @@
     "${config.home.homeDirectory}/.config/hypr/envrules.conf"
     "${config.home.homeDirectory}/.config/hypr/monitors.conf"
     "${config.home.homeDirectory}/.config/hypr/execs.conf"
+    "${config.home.homeDirectory}/.local/share/ambxst/hyprland.conf"
   ];
 
   # Laptop Hyprland config files
