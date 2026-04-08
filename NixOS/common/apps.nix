@@ -26,6 +26,7 @@
     gcc
     adwaita-qt
     libsecret
+    codex
 
     # --- Editors & IDEs ---
     vim
@@ -55,6 +56,7 @@
     vlc
     telegram-desktop
     obs-studio
+    localsend
 
     # --- Life ---
     libreoffice
