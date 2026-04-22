@@ -55,6 +55,7 @@
     vlc
     telegram-desktop
     obs-studio
+    localsend
 
     # --- Life ---
     libreoffice

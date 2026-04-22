@@ -17,6 +17,9 @@
   };
   console.keyMap = "br-abnt2";
 
+  # Docker
+  virtualisation.docker.enable = true;
+
   # Laptop power management (disable power-profiles-daemon as it conflicts with tlp)
   services.power-profiles-daemon.enable = false;
   services.tlp = {
@@ -40,7 +43,7 @@
 
   # You may need different GPU config here
   # For Intel:
-  # hardware.graphics.extraPackages = with pkgs; [ intel-media-driver ];
+  hardware.graphics.extraPackages = with pkgs; [ intel-media-driver ];
 
   # For AMD:
   # services.xserver.videoDrivers = ["amdgpu"];
