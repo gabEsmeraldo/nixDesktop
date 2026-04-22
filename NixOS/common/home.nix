@@ -124,7 +124,7 @@
   # Thunar settings
   xdg.configFile."Thunar/thunarrc".text = ''
     [Configuration]
-    LastShowHidden=TRUE
+    LastShowHidden=FALSE 
     LastSortColumn=THUNAR_COLUMN_DATE
     LastSortOrder=GTK_SORT_DESCENDING
     LastView=ThunarIconView
