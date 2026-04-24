@@ -2078,7 +2078,7 @@
             "actions": [
                 {
                     "args": {
-                        "command": "wpctl set-default 89 && notify-send \"Output Changed\" \"IEM\""
+                        "command": "wpctl set-default 89 && \nnotify-send \"Output Changed\" \"IEM\""
                     },
                     "id": "command.run",
                     "layouts": [
@@ -2101,7 +2101,7 @@
             "actions": [
                 {
                     "args": {
-                        "command": "wpctl set-default 90 && notify-send \"Output Changed\" \"Caixa de Som\""
+                        "command": "wpctl set-default 90 && \nnotify-send \"Output Changed\" \"Caixa de Som\""
                     },
                     "id": "command.run",
                     "layouts": [
