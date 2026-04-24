@@ -15,6 +15,7 @@
     "${config.home.homeDirectory}/.config/hypr/monitors.conf"
     "${config.home.homeDirectory}/.config/hypr/execs.conf"
     "${config.home.homeDirectory}/.config/hypr/wallpaper.conf"
+    "~/.local/share/ambxst/hyprland.conf"
   ];
 
   # Desktop-specific tablet input

@@ -38,6 +38,18 @@
     server.port = 6742;
   };
 
+  # Disable automatic sleep/suspend
+  services.logind = {
+    lidSwitch = "ignore";
+    lidSwitchDocked = "ignore";
+    lidSwitchExternalPower = "ignore";
+    settings.Login = {
+      HandlePowerKey = "ignore";
+      IdleAction = "ignore";
+      IdleActionSec = 0;
+    };
+  };
+
   # Docker
   virtualisation.docker.enable = true;
 
