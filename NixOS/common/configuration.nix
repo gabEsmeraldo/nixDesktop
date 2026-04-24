@@ -111,6 +111,13 @@
   # Firefox
   programs.firefox.enable = true;
 
+  # Android AAPT2 build fix
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    zlib
+    libcxx
+  ];
+
   # Display Manager
   services.displayManager.ly = {
     enable = true;

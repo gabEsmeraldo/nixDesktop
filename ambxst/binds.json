@@ -1,49 +1,65 @@
 {
     "ambxst": {
         "assistant": {
-            "argument": "ambxst run assistant",
-            "dispatcher": "exec",
+            "action": {
+                "args": {
+                },
+                "id": "ambxst.assistant"
+            },
             "key": "",
             "modifiers": [
             ]
         },
         "clipboard": {
-            "argument": "ambxst run clipboard",
-            "dispatcher": "exec",
+            "action": {
+                "args": {
+                },
+                "id": "ambxst.clipboard"
+            },
             "key": "V",
             "modifiers": [
                 "SUPER"
             ]
         },
         "dashboard": {
-            "argument": "ambxst run dashboard",
-            "dispatcher": "exec",
-            "flags": "",
+            "action": {
+                "args": {
+                },
+                "id": "ambxst.dashboard"
+            },
             "key": "D",
             "modifiers": [
                 "SUPER"
             ]
         },
         "emoji": {
-            "argument": "ambxst run emoji",
-            "dispatcher": "exec",
+            "action": {
+                "args": {
+                },
+                "id": "ambxst.emoji"
+            },
             "key": "PERIOD",
             "modifiers": [
                 "SUPER"
             ]
         },
         "launcher": {
-            "argument": "ambxst run launcher",
-            "dispatcher": "exec",
-            "flags": "r",
+            "action": {
+                "args": {
+                },
+                "id": "ambxst.launcher"
+            },
             "key": "Super_L",
             "modifiers": [
                 "SUPER"
             ]
         },
         "notes": {
-            "argument": "ambxst run notes",
-            "dispatcher": "exec",
+            "action": {
+                "args": {
+                },
+                "id": "ambxst.notes"
+            },
             "key": "N",
             "modifiers": [
                 "SUPER"
@@ -51,9 +67,11 @@
         },
         "system": {
             "config": {
-                "argument": "ambxst run config",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.config"
+                },
                 "key": "C",
                 "modifiers": [
                     "SUPER",
@@ -62,9 +80,11 @@
                 ]
             },
             "lens": {
-                "argument": "ambxst run lens",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.lens"
+                },
                 "key": "A",
                 "modifiers": [
                     "SUPER",
@@ -72,36 +92,44 @@
                 ]
             },
             "lockscreen": {
-                "argument": "loginctl lock-session",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "system.lock"
+                },
                 "key": "L",
                 "modifiers": [
                     "SUPER"
                 ]
             },
             "overview": {
-                "argument": "ambxst run overview",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.overview"
+                },
                 "key": "TAB",
                 "modifiers": [
                     "SUPER"
                 ]
             },
             "powermenu": {
-                "argument": "ambxst run powermenu",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.powermenu"
+                },
                 "key": "ESCAPE",
                 "modifiers": [
                     "SUPER"
                 ]
             },
             "quit": {
-                "argument": "ambxst quit",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.quit"
+                },
                 "key": "B",
                 "modifiers": [
                     "SUPER",
@@ -110,9 +138,11 @@
                 ]
             },
             "reload": {
-                "argument": "ambxst reload",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.reload"
+                },
                 "key": "B",
                 "modifiers": [
                     "SUPER",
@@ -120,9 +150,11 @@
                 ]
             },
             "screenrecord": {
-                "argument": "ambxst run screenrecord",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.screenrecord"
+                },
                 "key": "R",
                 "modifiers": [
                     "SUPER",
@@ -130,9 +162,11 @@
                 ]
             },
             "screenshot": {
-                "argument": "ambxst run screenshot",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.screenshot"
+                },
                 "key": "S",
                 "modifiers": [
                     "SUPER",
@@ -140,9 +174,11 @@
                 ]
             },
             "tools": {
-                "argument": "ambxst run tools",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.tools"
+                },
                 "key": "S",
                 "modifiers": [
                     "SUPER"
@@ -150,15 +186,21 @@
             }
         },
         "tmux": {
-            "argument": "ambxst run tmux",
-            "dispatcher": "exec",
+            "action": {
+                "args": {
+                },
+                "id": "ambxst.tmux"
+            },
             "key": "",
             "modifiers": [
             ]
         },
         "wallpapers": {
-            "argument": "ambxst run wallpapers",
-            "dispatcher": "exec",
+            "action": {
+                "args": {
+                },
+                "id": "ambxst.wallpapers"
+            },
             "key": "COMMA",
             "modifiers": [
                 "SUPER"
@@ -169,14 +211,11 @@
         {
             "actions": [
                 {
-                    "argument": "",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
                     },
-                    "dispatcher": "killactive",
-                    "flags": ""
+                    "id": "window.close",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": false,
@@ -193,14 +232,14 @@
         {
             "actions": [
                 {
-                    "argument": "1",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "argument": "1",
+                        "dispatcher": "split:workspace",
+                        "flags": ""
                     },
-                    "dispatcher": "split:workspace",
-                    "flags": ""
+                    "id": "legacy.dispatcher",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -217,14 +256,14 @@
         {
             "actions": [
                 {
-                    "argument": "2",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "argument": "2",
+                        "dispatcher": "split:workspace",
+                        "flags": ""
                     },
-                    "dispatcher": "split:workspace",
-                    "flags": ""
+                    "id": "legacy.dispatcher",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -241,14 +280,14 @@
         {
             "actions": [
                 {
-                    "argument": "3",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "argument": "3",
+                        "dispatcher": "split:workspace",
+                        "flags": ""
                     },
-                    "dispatcher": "split:workspace",
-                    "flags": ""
+                    "id": "legacy.dispatcher",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -265,14 +304,14 @@
         {
             "actions": [
                 {
-                    "argument": "4",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "argument": "4",
+                        "dispatcher": "split:workspace",
+                        "flags": ""
                     },
-                    "dispatcher": "split:workspace",
-                    "flags": ""
+                    "id": "legacy.dispatcher",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -289,14 +328,14 @@
         {
             "actions": [
                 {
-                    "argument": "5",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "argument": "5",
+                        "dispatcher": "split:workspace",
+                        "flags": ""
                     },
-                    "dispatcher": "split:workspace",
-                    "flags": ""
+                    "id": "legacy.dispatcher",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -313,14 +352,14 @@
         {
             "actions": [
                 {
-                    "argument": "6",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "argument": "6",
+                        "dispatcher": "split:workspace",
+                        "flags": ""
                     },
-                    "dispatcher": "split:workspace",
-                    "flags": ""
+                    "id": "legacy.dispatcher",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -337,14 +376,14 @@
         {
             "actions": [
                 {
-                    "argument": "7",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "argument": "7",
+                        "dispatcher": "split:workspace",
+                        "flags": ""
                     },
-                    "dispatcher": "split:workspace",
-                    "flags": ""
+                    "id": "legacy.dispatcher",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -361,14 +400,14 @@
         {
             "actions": [
                 {
-                    "argument": "8",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "argument": "8",
+                        "dispatcher": "split:workspace",
+                        "flags": ""
                     },
-                    "dispatcher": "split:workspace",
-                    "flags": ""
+                    "id": "legacy.dispatcher",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -385,14 +424,14 @@
         {
             "actions": [
                 {
-                    "argument": "9",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "argument": "9",
+                        "dispatcher": "split:workspace",
+                        "flags": ""
                     },
-                    "dispatcher": "split:workspace",
-                    "flags": ""
+                    "id": "legacy.dispatcher",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -409,14 +448,14 @@
         {
             "actions": [
                 {
-                    "argument": "10",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "argument": "10",
+                        "dispatcher": "split:workspace",
+                        "flags": ""
                     },
-                    "dispatcher": "split:workspace",
-                    "flags": ""
+                    "id": "legacy.dispatcher",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -433,14 +472,14 @@
         {
             "actions": [
                 {
-                    "argument": "1",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "argument": "1",
+                        "dispatcher": "split:movetoworkspacesilent",
+                        "flags": ""
                     },
-                    "dispatcher": "split:movetoworkspacesilent",
-                    "flags": ""
+                    "id": "legacy.dispatcher",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": false,
@@ -458,14 +497,12 @@
         {
             "actions": [
                 {
-                    "argument": "2",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "index": "2"
                     },
-                    "dispatcher": "movetoworkspace",
-                    "flags": ""
+                    "id": "workspace.move-window",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": false,
@@ -483,14 +520,12 @@
         {
             "actions": [
                 {
-                    "argument": "3",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "index": "3"
                     },
-                    "dispatcher": "movetoworkspace",
-                    "flags": ""
+                    "id": "workspace.move-window",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": false,
@@ -508,14 +543,12 @@
         {
             "actions": [
                 {
-                    "argument": "4",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "index": "4"
                     },
-                    "dispatcher": "movetoworkspace",
-                    "flags": ""
+                    "id": "workspace.move-window",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": false,
@@ -533,14 +566,12 @@
         {
             "actions": [
                 {
-                    "argument": "5",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "index": "5"
                     },
-                    "dispatcher": "movetoworkspace",
-                    "flags": ""
+                    "id": "workspace.move-window",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": false,
@@ -558,14 +589,12 @@
         {
             "actions": [
                 {
-                    "argument": "6",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "index": "6"
                     },
-                    "dispatcher": "movetoworkspace",
-                    "flags": ""
+                    "id": "workspace.move-window",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": false,
@@ -583,14 +612,12 @@
         {
             "actions": [
                 {
-                    "argument": "7",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "index": "7"
                     },
-                    "dispatcher": "movetoworkspace",
-                    "flags": ""
+                    "id": "workspace.move-window",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": false,
@@ -608,14 +635,12 @@
         {
             "actions": [
                 {
-                    "argument": "8",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "index": "8"
                     },
-                    "dispatcher": "movetoworkspace",
-                    "flags": ""
+                    "id": "workspace.move-window",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": false,
@@ -633,14 +658,12 @@
         {
             "actions": [
                 {
-                    "argument": "9",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "index": "9"
                     },
-                    "dispatcher": "movetoworkspace",
-                    "flags": ""
+                    "id": "workspace.move-window",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": false,
@@ -658,14 +681,12 @@
         {
             "actions": [
                 {
-                    "argument": "10",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "index": "10"
                     },
-                    "dispatcher": "movetoworkspace",
-                    "flags": ""
+                    "id": "workspace.move-window",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": false,
@@ -683,14 +704,14 @@
         {
             "actions": [
                 {
-                    "argument": "e+1",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "argument": "e+1",
+                        "dispatcher": "split:workspace",
+                        "flags": ""
                     },
-                    "dispatcher": "split:workspace",
-                    "flags": ""
+                    "id": "legacy.dispatcher",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -707,14 +728,14 @@
         {
             "actions": [
                 {
-                    "argument": "e-1",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "argument": "e-1",
+                        "dispatcher": "split:workspace",
+                        "flags": ""
                     },
-                    "dispatcher": "split:workspace",
-                    "flags": ""
+                    "id": "legacy.dispatcher",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -731,14 +752,12 @@
         {
             "actions": [
                 {
-                    "argument": "e-1",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "offset": "-1"
                     },
-                    "dispatcher": "workspace",
-                    "flags": ""
+                    "id": "workspace.switch-occupied",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": false,
@@ -756,14 +775,12 @@
         {
             "actions": [
                 {
-                    "argument": "e+1",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "offset": "+1"
                     },
-                    "dispatcher": "workspace",
-                    "flags": ""
+                    "id": "workspace.switch-occupied",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": false,
@@ -781,14 +798,12 @@
         {
             "actions": [
                 {
-                    "argument": "-1",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "offset": "-1"
                     },
-                    "dispatcher": "workspace",
-                    "flags": ""
+                    "id": "workspace.switch-relative",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": false,
@@ -805,14 +820,12 @@
         {
             "actions": [
                 {
-                    "argument": "+1",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "offset": "+1"
                     },
-                    "dispatcher": "workspace",
-                    "flags": ""
+                    "id": "workspace.switch-relative",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": false,
@@ -829,14 +842,11 @@
         {
             "actions": [
                 {
-                    "argument": "",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
                     },
-                    "dispatcher": "movewindow",
-                    "flags": "m"
+                    "id": "window.drag",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -853,14 +863,11 @@
         {
             "actions": [
                 {
-                    "argument": "",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
                     },
-                    "dispatcher": "resizewindow",
-                    "flags": "m"
+                    "id": "window.resize-drag",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -877,14 +884,11 @@
         {
             "actions": [
                 {
-                    "argument": "playerctl play-pause",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
                     },
-                    "dispatcher": "exec",
-                    "flags": ""
+                    "id": "media.play-pause",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -900,14 +904,11 @@
         {
             "actions": [
                 {
-                    "argument": "playerctl previous",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
                     },
-                    "dispatcher": "exec",
-                    "flags": ""
+                    "id": "media.prev",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -923,14 +924,11 @@
         {
             "actions": [
                 {
-                    "argument": "playerctl next",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
                     },
-                    "dispatcher": "exec",
-                    "flags": ""
+                    "id": "media.next",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -946,14 +944,11 @@
         {
             "actions": [
                 {
-                    "argument": "playerctl play-pause",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
                     },
-                    "dispatcher": "exec",
-                    "flags": "l"
+                    "id": "media.play-pause-locked",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -969,14 +964,11 @@
         {
             "actions": [
                 {
-                    "argument": "playerctl stop",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
                     },
-                    "dispatcher": "exec",
-                    "flags": "l"
+                    "id": "media.stop-locked",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -992,14 +984,12 @@
         {
             "actions": [
                 {
-                    "argument": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "command": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
                     },
-                    "dispatcher": "exec",
-                    "flags": "le"
+                    "id": "command.run",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -1015,14 +1005,12 @@
         {
             "actions": [
                 {
-                    "argument": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%-",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "command": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%-"
                     },
-                    "dispatcher": "exec",
-                    "flags": "le"
+                    "id": "command.run",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -1038,14 +1026,11 @@
         {
             "actions": [
                 {
-                    "argument": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
                     },
-                    "dispatcher": "exec",
-                    "flags": "le"
+                    "id": "audio.mute-toggle",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -1061,14 +1046,11 @@
         {
             "actions": [
                 {
-                    "argument": "ambxst brightness +5",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
                     },
-                    "dispatcher": "exec",
-                    "flags": "le"
+                    "id": "brightness.up",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -1084,14 +1066,11 @@
         {
             "actions": [
                 {
-                    "argument": "ambxst brightness -5",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
                     },
-                    "dispatcher": "exec",
-                    "flags": "le"
+                    "id": "brightness.down",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -1107,14 +1086,11 @@
         {
             "actions": [
                 {
-                    "argument": "notify-send \"Soon\"",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
                     },
-                    "dispatcher": "exec",
-                    "flags": ""
+                    "id": "system.calculator",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -1130,14 +1106,11 @@
         {
             "actions": [
                 {
-                    "argument": "",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
                     },
-                    "dispatcher": "togglespecialworkspace",
-                    "flags": ""
+                    "id": "workspace.toggle-special",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": false,
@@ -1155,14 +1128,11 @@
         {
             "actions": [
                 {
-                    "argument": "special",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
                     },
-                    "dispatcher": "movetoworkspace",
-                    "flags": ""
+                    "id": "workspace.move-window-special",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": false,
@@ -1180,14 +1150,11 @@
         {
             "actions": [
                 {
-                    "argument": "loginctl lock-session",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
                     },
-                    "dispatcher": "exec",
-                    "flags": "l"
+                    "id": "system.lock-locked",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -1203,14 +1170,12 @@
         {
             "actions": [
                 {
-                    "argument": "hyprctl dispatch dpms off",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "command": "hyprctl dispatch dpms off"
                     },
-                    "dispatcher": "exec",
-                    "flags": "l"
+                    "id": "command.run",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -1226,14 +1191,12 @@
         {
             "actions": [
                 {
-                    "argument": "hyprctl dispatch dpms on",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "command": "hyprctl dispatch dpms on"
                     },
-                    "dispatcher": "exec",
-                    "flags": "l"
+                    "id": "command.run",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -1249,27 +1212,20 @@
         {
             "actions": [
                 {
-                    "argument": "focus u",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "direction": "u"
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.focus",
+                    "layouts": [
+                    ]
                 },
                 {
-                    "argument": "u",
-                    "compositor": {
-                        "layouts": [
-                            "dwindle",
-                            "master"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "direction": "u"
                     },
-                    "dispatcher": "movefocus",
-                    "flags": ""
+                    "id": "window.focus",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": false,
@@ -1293,27 +1249,20 @@
         {
             "actions": [
                 {
-                    "argument": "focus d",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "direction": "d"
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.focus",
+                    "layouts": [
+                    ]
                 },
                 {
-                    "argument": "d",
-                    "compositor": {
-                        "layouts": [
-                            "master",
-                            "dwindle"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "direction": "d"
                     },
-                    "dispatcher": "movefocus",
-                    "flags": ""
+                    "id": "window.focus",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": false,
@@ -1337,27 +1286,20 @@
         {
             "actions": [
                 {
-                    "argument": "focus l",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "direction": "l"
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.focus",
+                    "layouts": [
+                    ]
                 },
                 {
-                    "argument": "l",
-                    "compositor": {
-                        "layouts": [
-                            "dwindle",
-                            "master"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "direction": "l"
                     },
-                    "dispatcher": "movefocus",
-                    "flags": ""
+                    "id": "window.focus",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": false,
@@ -1388,27 +1330,20 @@
         {
             "actions": [
                 {
-                    "argument": "focus r",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "direction": "r"
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.focus",
+                    "layouts": [
+                    ]
                 },
                 {
-                    "argument": "r",
-                    "compositor": {
-                        "layouts": [
-                            "master",
-                            "dwindle"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "direction": "r"
                     },
-                    "dispatcher": "movefocus",
-                    "flags": ""
+                    "id": "window.focus",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": false,
@@ -1439,27 +1374,20 @@
         {
             "actions": [
                 {
-                    "argument": "l",
-                    "compositor": {
-                        "layouts": [
-                            "master",
-                            "dwindle"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "direction": "l"
                     },
-                    "dispatcher": "movewindow",
-                    "flags": ""
+                    "id": "window.move",
+                    "layouts": [
+                    ]
                 },
                 {
-                    "argument": "movewindowto l",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "direction": "l"
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.move-window",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -1484,27 +1412,20 @@
         {
             "actions": [
                 {
-                    "argument": "r",
-                    "compositor": {
-                        "layouts": [
-                            "dwindle",
-                            "master"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "direction": "r"
                     },
-                    "dispatcher": "movewindow",
-                    "flags": ""
+                    "id": "window.move",
+                    "layouts": [
+                    ]
                 },
                 {
-                    "argument": "movewindowto r",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "direction": "r"
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.move-window",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -1529,27 +1450,20 @@
         {
             "actions": [
                 {
-                    "argument": "u",
-                    "compositor": {
-                        "layouts": [
-                            "master",
-                            "dwindle"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "direction": "u"
                     },
-                    "dispatcher": "movewindow",
-                    "flags": ""
+                    "id": "window.move",
+                    "layouts": [
+                    ]
                 },
                 {
-                    "argument": "movewindowto u",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "direction": "u"
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.move-window",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -1574,26 +1488,20 @@
         {
             "actions": [
                 {
-                    "argument": "d",
-                    "compositor": {
-                        "layouts": [
-                            "master",
-                            "dwindle"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "direction": "d"
                     },
-                    "dispatcher": "movewindow",
-                    "flags": ""
+                    "id": "window.move",
+                    "layouts": [
+                    ]
                 },
                 {
-                    "argument": "movewindowto d",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "direction": "d"
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.move-window",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -1618,27 +1526,20 @@
         {
             "actions": [
                 {
-                    "argument": "colresize +0.1",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "delta": "+0.1"
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.resize-column",
+                    "layouts": [
+                    ]
                 },
                 {
-                    "argument": "50 0",
-                    "compositor": {
-                        "layouts": [
-                            "master",
-                            "dwindle"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "delta": "50 0"
                     },
-                    "dispatcher": "resizeactive",
-                    "flags": ""
+                    "id": "window.resize",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -1663,27 +1564,20 @@
         {
             "actions": [
                 {
-                    "argument": "colresize -0.1",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "delta": "-0.1"
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.resize-column",
+                    "layouts": [
+                    ]
                 },
                 {
-                    "argument": "-50 0",
-                    "compositor": {
-                        "layouts": [
-                            "master",
-                            "dwindle"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "delta": "-50 0"
                     },
-                    "dispatcher": "resizeactive",
-                    "flags": ""
+                    "id": "window.resize",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -1708,14 +1602,12 @@
         {
             "actions": [
                 {
-                    "argument": "0 50",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "delta": "0 50"
                     },
-                    "dispatcher": "resizeactive",
-                    "flags": ""
+                    "id": "window.resize",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -1740,14 +1632,12 @@
         {
             "actions": [
                 {
-                    "argument": "0 -50",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "delta": "0 -50"
                     },
-                    "dispatcher": "resizeactive",
-                    "flags": ""
+                    "id": "window.resize",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -1772,15 +1662,11 @@
         {
             "actions": [
                 {
-                    "argument": "promote",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.promote",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -1798,15 +1684,11 @@
         {
             "actions": [
                 {
-                    "argument": "togglefit",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.toggle-fit",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -1824,15 +1706,11 @@
         {
             "actions": [
                 {
-                    "argument": "colresize +conf",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.toggle-full-column",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -1850,15 +1728,12 @@
         {
             "actions": [
                 {
-                    "argument": "swapcol l",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "direction": "l"
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.swap-column",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -1885,15 +1760,12 @@
         {
             "actions": [
                 {
-                    "argument": "swapcol r",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "direction": "r"
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.swap-column",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -1920,15 +1792,12 @@
         {
             "actions": [
                 {
-                    "argument": "movecoltoworkspace 1",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "index": "1"
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.move-column-workspace",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -1947,15 +1816,12 @@
         {
             "actions": [
                 {
-                    "argument": "movecoltoworkspace 2",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "index": "2"
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.move-column-workspace",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -1974,15 +1840,12 @@
         {
             "actions": [
                 {
-                    "argument": "movecoltoworkspace 3",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "index": "3"
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.move-column-workspace",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -2001,15 +1864,12 @@
         {
             "actions": [
                 {
-                    "argument": "movecoltoworkspace 4",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "index": "4"
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.move-column-workspace",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -2028,15 +1888,12 @@
         {
             "actions": [
                 {
-                    "argument": "movecoltoworkspace 5",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "index": "5"
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.move-column-workspace",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -2055,15 +1912,12 @@
         {
             "actions": [
                 {
-                    "argument": "movecoltoworkspace 6",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "index": "6"
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.move-column-workspace",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -2082,15 +1936,12 @@
         {
             "actions": [
                 {
-                    "argument": "movecoltoworkspace 7",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "index": "7"
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.move-column-workspace",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -2109,15 +1960,12 @@
         {
             "actions": [
                 {
-                    "argument": "movecoltoworkspace 8",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "index": "8"
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.move-column-workspace",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -2136,15 +1984,12 @@
         {
             "actions": [
                 {
-                    "argument": "movecoltoworkspace 9",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "index": "9"
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.move-column-workspace",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -2163,15 +2008,12 @@
         {
             "actions": [
                 {
-                    "argument": "movecoltoworkspace 10",
-                    "compositor": {
-                        "layouts": [
-                            "scrolling"
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "index": "10"
                     },
-                    "dispatcher": "layoutmsg",
-                    "flags": ""
+                    "id": "scrolling.move-column-workspace",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -2190,14 +2032,12 @@
         {
             "actions": [
                 {
-                    "argument": "pavucontrol",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "command": "pavucontrol"
                     },
-                    "dispatcher": "exec",
-                    "flags": ""
+                    "id": "command.run",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -2215,14 +2055,12 @@
         {
             "actions": [
                 {
-                    "argument": "code",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "command": "code"
                     },
-                    "dispatcher": "exec",
-                    "flags": ""
+                    "id": "command.run",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -2239,14 +2077,12 @@
         {
             "actions": [
                 {
-                    "argument": "wpctl set-default 89 && \nnotify-send \"Output Changed\" \"IEM\"\n",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "command": "wpctl set-default 89 && notify-send \"Output Changed\" \"IEM\""
                     },
-                    "dispatcher": "exec",
-                    "flags": ""
+                    "id": "command.run",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -2264,14 +2100,12 @@
         {
             "actions": [
                 {
-                    "argument": "wpctl set-default 90 && \nnotify-send \"Output Changed\" \"Caixa de Som\"\n",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "command": "wpctl set-default 90 && notify-send \"Output Changed\" \"Caixa de Som\""
                     },
-                    "dispatcher": "exec",
-                    "flags": ""
+                    "id": "command.run",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -2289,14 +2123,12 @@
         {
             "actions": [
                 {
-                    "argument": "md.obsidian.Obsidian",
-                    "compositor": {
-                        "layouts": [
-                        ],
-                        "type": "hyprland"
+                    "args": {
+                        "command": "md.obsidian.Obsidian"
                     },
-                    "dispatcher": "exec",
-                    "flags": ""
+                    "id": "command.run",
+                    "layouts": [
+                    ]
                 }
             ],
             "enabled": true,
@@ -2314,72 +2146,88 @@
     "defaultAmbxstBinds": {
         "ambxst": {
             "assistant": {
-                "argument": "ambxst run assistant",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.assistant"
+                },
                 "key": "A",
                 "modifiers": [
                     "SUPER"
                 ]
             },
             "clipboard": {
-                "argument": "ambxst run clipboard",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.clipboard"
+                },
                 "key": "V",
                 "modifiers": [
                     "SUPER"
                 ]
             },
             "dashboard": {
-                "argument": "ambxst run dashboard",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.dashboard"
+                },
                 "key": "D",
                 "modifiers": [
                     "SUPER"
                 ]
             },
             "emoji": {
-                "argument": "ambxst run emoji",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.emoji"
+                },
                 "key": "PERIOD",
                 "modifiers": [
                     "SUPER"
                 ]
             },
             "launcher": {
-                "argument": "ambxst run launcher",
-                "dispatcher": "exec",
-                "flags": "r",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.launcher"
+                },
                 "key": "Super_L",
                 "modifiers": [
                     "SUPER"
                 ]
             },
             "notes": {
-                "argument": "ambxst run notes",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.notes"
+                },
                 "key": "N",
                 "modifiers": [
                     "SUPER"
                 ]
             },
             "tmux": {
-                "argument": "ambxst run tmux",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.tmux"
+                },
                 "key": "T",
                 "modifiers": [
                     "SUPER"
                 ]
             },
             "wallpapers": {
-                "argument": "ambxst run wallpapers",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.wallpapers"
+                },
                 "key": "COMMA",
                 "modifiers": [
                     "SUPER"
@@ -2388,9 +2236,11 @@
         },
         "system": {
             "config": {
-                "argument": "ambxst run config",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.config"
+                },
                 "key": "C",
                 "modifiers": [
                     "SUPER",
@@ -2398,9 +2248,11 @@
                 ]
             },
             "lens": {
-                "argument": "ambxst run lens",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.lens"
+                },
                 "key": "A",
                 "modifiers": [
                     "SUPER",
@@ -2408,36 +2260,44 @@
                 ]
             },
             "lockscreen": {
-                "argument": "loginctl lock-session",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "system.lock"
+                },
                 "key": "L",
                 "modifiers": [
                     "SUPER"
                 ]
             },
             "overview": {
-                "argument": "ambxst run overview",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.overview"
+                },
                 "key": "TAB",
                 "modifiers": [
                     "SUPER"
                 ]
             },
             "powermenu": {
-                "argument": "ambxst run powermenu",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.powermenu"
+                },
                 "key": "ESCAPE",
                 "modifiers": [
                     "SUPER"
                 ]
             },
             "quit": {
-                "argument": "ambxst quit",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.quit"
+                },
                 "key": "B",
                 "modifiers": [
                     "SUPER",
@@ -2446,9 +2306,11 @@
                 ]
             },
             "reload": {
-                "argument": "ambxst reload",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.reload"
+                },
                 "key": "B",
                 "modifiers": [
                     "SUPER",
@@ -2456,9 +2318,11 @@
                 ]
             },
             "screenrecord": {
-                "argument": "ambxst run screenrecord",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.screenrecord"
+                },
                 "key": "R",
                 "modifiers": [
                     "SUPER",
@@ -2466,9 +2330,11 @@
                 ]
             },
             "screenshot": {
-                "argument": "ambxst run screenshot",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.screenshot"
+                },
                 "key": "S",
                 "modifiers": [
                     "SUPER",
@@ -2476,9 +2342,11 @@
                 ]
             },
             "tools": {
-                "argument": "ambxst run tools",
-                "dispatcher": "exec",
-                "flags": "",
+                "action": {
+                    "args": {
+                    },
+                    "id": "ambxst.tools"
+                },
                 "key": "S",
                 "modifiers": [
                     "SUPER"
