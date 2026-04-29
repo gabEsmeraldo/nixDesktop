@@ -5,6 +5,7 @@
   home.packages = with pkgs; [
     # --- Laptop Tools ---
     brightnessctl
+    android-studio
     # Add laptop-specific apps here
   ];
 }

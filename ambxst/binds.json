@@ -25,9 +25,7 @@
             "action": {
                 "args": {
                 },
-                "id": "ambxst.dashboard",
-                "layouts": [
-                ]
+                "id": "ambxst.dashboard"
             },
             "key": "D",
             "modifiers": [
@@ -2065,7 +2063,7 @@
                     ]
                 }
             ],
-            "enabled": true,
+            "enabled": false,
             "keys": [
                 {
                     "key": "C",
@@ -2080,52 +2078,6 @@
             "actions": [
                 {
                     "args": {
-                        "command": "wpctl set-default 89 && \nnotify-send \"Output Changed\" \"IEM\""
-                    },
-                    "id": "command.run",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "1",
-                    "modifiers": [
-                        "SUPER",
-                        "CTRL"
-                    ]
-                }
-            ],
-            "name": "IEM"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "command": "wpctl set-default 90 && \nnotify-send \"Output Changed\" \"Caixa de Som\""
-                    },
-                    "id": "command.run",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "2",
-                    "modifiers": [
-                        "SUPER",
-                        "CTRL"
-                    ]
-                }
-            ],
-            "name": "Caixa de Som"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
                         "command": "md.obsidian.Obsidian"
                     },
                     "id": "command.run",
@@ -2133,7 +2085,7 @@
                     ]
                 }
             ],
-            "enabled": true,
+            "enabled": false,
             "keys": [
                 {
                     "key": "Z",
