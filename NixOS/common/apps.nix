@@ -26,13 +26,16 @@
     gcc
     adwaita-qt
     libsecret
+    # codex
+    claude-code
+    claude-monitor
 
     # --- Editors & IDEs ---
     vim
     neovim
     vscode
     code-cursor
-    zed
+    zed-editor
     kdePackages.kate
 
     # --- Development Runtimes ---
@@ -47,7 +50,7 @@
     docker-compose
     beamMinimal28Packages.elixir_1_19
     erlang
-    claude-code
+    android-tools
 
     # --- Communication & Social ---
     anytype
@@ -55,6 +58,8 @@
     vlc
     telegram-desktop
     obs-studio
+    localsend
+    vivaldi
 
     # --- Life ---
     libreoffice

@@ -16,10 +16,19 @@
     variant = "";
   };
   console.keyMap = "br-abnt2";
+  console.font = "ter-v24n";
+  console.packages = with pkgs; [ terminus_font ];
+  console.earlySetup = true;
 
   # Wake on LAN (desktop only)
   networking.interfaces.enp5s0.wakeOnLan.enable = true;
-  networking.firewall.allowedUDPPorts = [ 9 ];
+  networking.firewall.allowedUDPPorts = [ 9 53317 ];
+  networking.firewall.allowedTCPPorts = [ 53317 ];
+  services.avahi = {
+    enable = true;
+    openFirewall = true;
+    nssmdns = true;
+  };
 
   # OpenRGB (desktop RGB control)
   services.hardware.openrgb = {
@@ -27,6 +36,18 @@
     package = pkgs.openrgb-with-all-plugins;
     motherboard = "amd";
     server.port = 6742;
+  };
+
+  # Disable automatic sleep/suspend
+  services.logind = {
+    lidSwitch = "ignore";
+    lidSwitchDocked = "ignore";
+    lidSwitchExternalPower = "ignore";
+    settings.Login = {
+      HandlePowerKey = "ignore";
+      IdleAction = "ignore";
+      IdleActionSec = 0;
+    };
   };
 
   # Docker

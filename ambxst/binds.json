@@ -2078,6 +2078,55 @@
             "actions": [
                 {
                     "args": {
+<<<<<<< HEAD
+=======
+                        "command": "wpctl set-default 89 && \nnotify-send \"Output Changed\" \"IEM\""
+                    },
+                    "id": "command.run",
+                    "layouts": [
+                    ]
+                }
+            ],
+            "enabled": false,
+            "keys": [
+                {
+                    "key": "1",
+                    "modifiers": [
+                        "SUPER",
+                        "CTRL"
+                    ]
+                }
+            ],
+            "name": "IEM"
+        },
+        {
+            "actions": [
+                {
+                    "args": {
+                        "command": "wpctl set-default 90 && \nnotify-send \"Output Changed\" \"Caixa de Som\""
+                    },
+                    "id": "command.run",
+                    "layouts": [
+                    ]
+                }
+            ],
+            "enabled": false,
+            "keys": [
+                {
+                    "key": "2",
+                    "modifiers": [
+                        "SUPER",
+                        "CTRL"
+                    ]
+                }
+            ],
+            "name": "Caixa de Som"
+        },
+        {
+            "actions": [
+                {
+                    "args": {
+>>>>>>> 8f918fdb0641505a1fc421349c94beab8cc02015
                         "command": "md.obsidian.Obsidian"
                     },
                     "id": "command.run",
