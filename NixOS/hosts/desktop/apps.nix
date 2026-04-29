@@ -30,6 +30,5 @@
     mysql-workbench
     mysql84
     multiviewer-for-f1
-    android-studio
   ];
 }

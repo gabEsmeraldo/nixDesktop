@@ -51,6 +51,7 @@
     beamMinimal28Packages.elixir_1_19
     erlang
     android-tools
+    android-studio
 
     # --- Communication & Social ---
     anytype
