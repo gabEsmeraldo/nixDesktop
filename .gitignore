@@ -8,6 +8,7 @@
 # Allow all files and subdirectories inside them
 !ambxst/**
 !NixOS/**
+NixOS/result
 
 # Allow the directories themselves (Git needs this)
 !.gitignore
