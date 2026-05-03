@@ -113,6 +113,7 @@
         "SUPER ALT, 9, split:movetoworkspacesilent, 9"
         "SUPER ALT, 0, split:movetoworkspacesilent, 10"
       ];
+      misc.no_cursor_warps = true;
       # Host-specific hypr configs will be sourced via host home.nix
     };
   };
