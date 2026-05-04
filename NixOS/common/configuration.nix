@@ -105,17 +105,37 @@
   users.users.gabzu = {
     isNormalUser = true;
     description = "gabzu";
-    extraGroups = [ "networkmanager" "wheel" "dialout" "i2c" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" "i2c" "docker" "kvm" ];
   };
 
   # Firefox
   programs.firefox.enable = true;
 
-  # Android AAPT2 build fix
+  # Android AAPT2 build + emulator runtime libs
+  # (Note: systemd 258+ handles adb uaccess automatically; android-tools is already in home-manager apps.nix)
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
     zlib
     libcxx
+    libpulseaudio
+    alsa-lib
+    libGL
+    vulkan-loader
+    fontconfig
+    freetype
+    dbus
+    expat
+    libbsd
+    libdrm
+    libxkbcommon
+    xorg.libX11
+    xorg.libXi
+    xorg.libXcursor
+    xorg.libXrandr
+    xorg.libXrender
+    xorg.libXtst
+    xorg.libxcb
+    xorg.libxshmfence
   ];
 
   # Display Manager

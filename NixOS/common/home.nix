@@ -59,6 +59,21 @@
     };
   };
 
+  programs.tmux = {
+    enable = true;
+    shell = "${pkgs.zsh}/bin/zsh";
+    terminal = "tmux-256color";
+    mouse = true;
+    extraConfig = ''
+      set -ga terminal-overrides ",*:Tc"
+
+      set -g status-style "bg=#1a1110,fg=#f1dfdc"
+      set -g window-status-current-style "bg=#1a1110,fg=#f1dfdc,bold"
+      set -g pane-border-style "fg=#4c4c4c"
+      set -g pane-active-border-style "fg=#f1dfdc"
+    '';
+  };
+
   programs.nixcord = {
     enable = true;
     user = "gabzu";
@@ -113,7 +128,7 @@
         "SUPER ALT, 9, split:movetoworkspacesilent, 9"
         "SUPER ALT, 0, split:movetoworkspacesilent, 10"
       ];
-      misc.no_cursor_warps = true;
+      cursor.no_warps = true;
       # Host-specific hypr configs will be sourced via host home.nix
     };
   };
