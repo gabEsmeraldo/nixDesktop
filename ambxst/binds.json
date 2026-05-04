@@ -226,9 +226,12 @@
             "enabled": false,
             "keys": [
                 {
-                    "key": "C",
+                    "key": "",
                     "modifiers": [
-                        "SUPER"
+                        "SUPER",
+                        "SHIFT",
+                        "CTRL",
+                        "ALT"
                     ]
                 }
             ],
@@ -969,7 +972,7 @@
                     ]
                 }
             ],
-            "enabled": true,
+            "enabled": false,
             "keys": [
                 {
                     "key": "Z",
@@ -992,7 +995,7 @@
                     ]
                 }
             ],
-            "enabled": true,
+            "enabled": false,
             "keys": [
                 {
                     "key": "X",
@@ -1015,7 +1018,7 @@
                     ]
                 }
             ],
-            "enabled": true,
+            "enabled": false,
             "keys": [
                 {
                     "key": "Z",
@@ -1037,7 +1040,7 @@
                     ]
                 }
             ],
-            "enabled": true,
+            "enabled": false,
             "keys": [
                 {
                     "key": "X",
@@ -1320,7 +1323,7 @@
                     ]
                 }
             ],
-            "enabled": true,
+            "enabled": false,
             "keys": [
                 {
                     "key": "V",
@@ -1342,7 +1345,7 @@
                     ]
                 }
             ],
-            "enabled": true,
+            "enabled": false,
             "keys": [
                 {
                     "key": "V",
