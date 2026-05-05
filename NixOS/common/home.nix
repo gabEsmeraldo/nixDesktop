@@ -59,8 +59,11 @@ in
     gtk3.extraConfig = {
       gtk-application-prefer-dark-theme = 1;
     };
-    gtk4.extraConfig = {
-      gtk-application-prefer-dark-theme = 1;
+    gtk4 = {
+      theme = config.gtk.theme;
+      extraConfig = {
+        gtk-application-prefer-dark-theme = 1;
+      };
     };
   };
 
@@ -155,29 +158,29 @@ in
         num_workspaces = 10;
       };
       bind = [
-        # switch workspace (split)
-        "SUPER, 1, split:workspace, 1"
-        "SUPER, 2, split:workspace, 2"
-        "SUPER, 3, split:workspace, 3"
-        "SUPER, 4, split:workspace, 4"
-        "SUPER, 5, split:workspace, 5"
-        "SUPER, 6, split:workspace, 6"
-        "SUPER, 7, split:workspace, 7"
-        "SUPER, 8, split:workspace, 8"
-        "SUPER, 9, split:workspace, 9"
-        "SUPER, 0, split:workspace, 10"
+        # switch workspace
+        "SUPER, 1, workspace, 1"
+        "SUPER, 2, workspace, 2"
+        "SUPER, 3, workspace, 3"
+        "SUPER, 4, workspace, 4"
+        "SUPER, 5, workspace, 5"
+        "SUPER, 6, workspace, 6"
+        "SUPER, 7, workspace, 7"
+        "SUPER, 8, workspace, 8"
+        "SUPER, 9, workspace, 9"
+        "SUPER, 0, workspace, 10"
 
-        # move window to workspace (split)
-        "SUPER ALT, 1, split:movetoworkspacesilent, 1"
-        "SUPER ALT, 2, split:movetoworkspacesilent, 2"
-        "SUPER ALT, 3, split:movetoworkspacesilent, 3"
-        "SUPER ALT, 4, split:movetoworkspacesilent, 4"
-        "SUPER ALT, 5, split:movetoworkspacesilent, 5"
-        "SUPER ALT, 6, split:movetoworkspacesilent, 6"
-        "SUPER ALT, 7, split:movetoworkspacesilent, 7"
-        "SUPER ALT, 8, split:movetoworkspacesilent, 8"
-        "SUPER ALT, 9, split:movetoworkspacesilent, 9"
-        "SUPER ALT, 0, split:movetoworkspacesilent, 10"
+        # move window to workspace
+        "SUPER ALT, 1, movetoworkspacesilent, 1"
+        "SUPER ALT, 2, movetoworkspacesilent, 2"
+        "SUPER ALT, 3, movetoworkspacesilent, 3"
+        "SUPER ALT, 4, movetoworkspacesilent, 4"
+        "SUPER ALT, 5, movetoworkspacesilent, 5"
+        "SUPER ALT, 6, movetoworkspacesilent, 6"
+        "SUPER ALT, 7, movetoworkspacesilent, 7"
+        "SUPER ALT, 8, movetoworkspacesilent, 8"
+        "SUPER ALT, 9, movetoworkspacesilent, 9"
+        "SUPER ALT, 0, movetoworkspacesilent, 10"
       ];
       cursor.no_warps = true;
       # Host-specific hypr configs will be sourced via host home.nix

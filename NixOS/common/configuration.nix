@@ -128,14 +128,14 @@
     libbsd
     libdrm
     libxkbcommon
-    xorg.libX11
-    xorg.libXi
-    xorg.libXcursor
-    xorg.libXrandr
-    xorg.libXrender
-    xorg.libXtst
-    xorg.libxcb
-    xorg.libxshmfence
+    libx11
+    libxi
+    libxcursor
+    libxrandr
+    libxrender
+    libxtst
+    libxcb
+    libxshmfence
   ];
 
   # Display Manager

@@ -11,7 +11,7 @@
     gamescope
     heroic
     hydralauncher
-    lutris
+    # lutris
     protonplus
     prismlauncher
 
