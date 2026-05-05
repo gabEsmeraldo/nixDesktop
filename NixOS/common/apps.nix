@@ -26,7 +26,7 @@
     gcc
     adwaita-qt
     libsecret
-    # codex
+    codex
     claude-code
     claude-monitor
 

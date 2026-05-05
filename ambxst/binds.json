@@ -217,30 +217,6 @@
             "actions": [
                 {
                     "args": {
-                    },
-                    "id": "window.close",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": false,
-            "keys": [
-                {
-                    "key": "",
-                    "modifiers": [
-                        "SUPER",
-                        "SHIFT",
-                        "CTRL",
-                        "ALT"
-                    ]
-                }
-            ],
-            "name": "Close Window"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
                         "index": "1"
                     },
                     "id": "workspace.switch",

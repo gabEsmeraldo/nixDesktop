@@ -1,6 +1,27 @@
 # Common home-manager configuration shared between all hosts
 { config, pkgs, inputs, ... }:
 
+let
+  tmuxResurrectStop = pkgs.writeShellApplication {
+    name = "tmux-resurrect-stop";
+    runtimeInputs = with pkgs; [
+      coreutils
+      findutils
+      gawk
+      gnugrep
+      gnused
+      procps
+      tmux
+    ];
+    text = ''
+      if tmux has-session 2>/dev/null; then
+        ${pkgs.tmuxPlugins.resurrect}/share/tmux-plugins/resurrect/scripts/save.sh quiet
+        tmux kill-server
+      fi
+    '';
+  };
+in
+
 {
   imports = [
     inputs.nixcord.homeModules.nixcord
@@ -64,6 +85,21 @@
     shell = "${pkgs.zsh}/bin/zsh";
     terminal = "tmux-256color";
     mouse = true;
+    plugins = with pkgs.tmuxPlugins; [
+      {
+        plugin = resurrect;
+        extraConfig = ''
+          set -g @resurrect-capture-pane-contents 'on'
+        '';
+      }
+      {
+        plugin = continuum;
+        extraConfig = ''
+          set -g @continuum-restore 'on'
+          set -g @continuum-save-interval '15'
+        '';
+      }
+    ];
     extraConfig = ''
       set -ga terminal-overrides ",*:Tc"
 
@@ -72,6 +108,21 @@
       set -g pane-border-style "fg=#4c4c4c"
       set -g pane-active-border-style "fg=#f1dfdc"
     '';
+  };
+
+  systemd.user.services.tmux-server = {
+    Unit = {
+      Description = "tmux server";
+      Documentation = "man:tmux(1)";
+    };
+    Service = {
+      Type = "forking";
+      ExecStart = "${pkgs.tmux}/bin/tmux new-session -d";
+      ExecStop = "${tmuxResurrectStop}/bin/tmux-resurrect-stop";
+      KillMode = "control-group";
+      RestartSec = 2;
+    };
+    Install.WantedBy = [ "default.target" ];
   };
 
   programs.nixcord = {

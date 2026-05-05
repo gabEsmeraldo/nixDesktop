@@ -1,10 +1,29 @@
 # Desktop-specific home-manager configuration
 { config, pkgs, inputs, ... }:
 
+let
+  easyEffectsGui = pkgs.writeShellApplication {
+    name = "easyeffects-gui";
+    runtimeInputs = with pkgs; [
+      coreutils
+      easyeffects
+    ];
+    text = ''
+      easyeffects -q >/dev/null 2>&1 || true
+      sleep 0.3
+      exec easyeffects "$@"
+    '';
+  };
+in
+
 {
   imports = [
     ../../common/home.nix
     ./apps.nix
+  ];
+
+  home.packages = [
+    easyEffectsGui
   ];
 
   # Desktop-specific Hyprland config sources
@@ -27,6 +46,20 @@
 
   # Desktop Hyprland config files
   home.file = {
+    ".local/share/applications/com.github.wwmm.easyeffects.desktop".text = ''
+      [Desktop Entry]
+      Name=Easy Effects
+      GenericName=Equalizer, Compressor and Other Audio Effects
+      Comment=Simple audio effects
+      Keywords=limiter;compressor;reverberation;equalizer;autovolume;
+      Categories=AudioVideo;Audio;
+      Exec=${easyEffectsGui}/bin/easyeffects-gui
+      Icon=com.github.wwmm.easyeffects
+      StartupWMClass=Easy Effects
+      StartupNotify=true
+      Terminal=false
+      Type=Application
+    '';
     ".config/hypr/decorations.conf".source = ../../common/hypr/decorations.conf;
     ".config/hypr/keybinds.conf".source = ./hypr/keybinds.conf;
     ".config/hypr/envrules.conf".source = ./hypr/envrules.conf;
