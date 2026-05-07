@@ -1,0 +1,23 @@
+diff --git a/pkg/ipc/hyprland/generator.go b/pkg/ipc/hyprland/generator.go
+index 1fd0e3c..4f2f8c1 100644
+--- a/pkg/ipc/hyprland/generator.go
++++ b/pkg/ipc/hyprland/generator.go
+@@ -383,9 +383,6 @@ func (g *Generator) GenerateLayerRules(rules []ipc.LayerRule) string {
+ 		if r.BlurPopups != nil && *r.BlurPopups {
+ 			props = append(props, "blur_popups = on")
+ 		}
+-		if r.IgnoreAlpha != nil && *r.IgnoreAlpha {
+-			props = append(props, "ignore_alpha = on")
+-		}
+ 		if r.IgnoreZeroAlpha != nil && *r.IgnoreZeroAlpha {
+ 			props = append(props, "ignore_zero_alpha = on")
+ 		}
+@@ -393,7 +390,7 @@ func (g *Generator) GenerateLayerRules(rules []ipc.LayerRule) string {
+ 			props = append(props, "no_shadow = on")
+ 		}
+ 		if r.IgnoreAlphaValue != nil {
+-			props = append(props, fmt.Sprintf("ignore_alpha = %.2f", *r.IgnoreAlphaValue))
++			props = append(props, fmt.Sprintf("ignore_alpha %.2f", *r.IgnoreAlphaValue))
+ 		}
+ 
+ 		matchStr := fmt.Sprintf("match:namespace = %s", r.Namespace)

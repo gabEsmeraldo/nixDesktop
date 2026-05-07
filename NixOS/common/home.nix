@@ -42,7 +42,6 @@ in
     XDG_SESSION_DESKTOP = "Hyprland";
     GTK_THEME = "Adwaita:dark";
     NIXOS_OZONE_WL = "1";
-    HYPRLAND_PLUGIN_DIR = "${inputs.hyprsplit.packages.${pkgs.stdenv.hostPlatform.system}.hyprsplit}/lib";
     SSH_AUTH_SOCK = "$XDG_RUNTIME_DIR/keyring/ssh";
   };
 
@@ -147,48 +146,15 @@ in
     };
   };
 
-  wayland.windowManager.hyprland = {
-    enable = true;
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    plugins = [
-      inputs.hyprsplit.packages.${pkgs.stdenv.hostPlatform.system}.hyprsplit
-    ];
-    settings = {
-      plugin.hyprsplit = {
-        num_workspaces = 10;
-      };
-      bind = [
-        # switch workspace
-        "SUPER, 1, workspace, 1"
-        "SUPER, 2, workspace, 2"
-        "SUPER, 3, workspace, 3"
-        "SUPER, 4, workspace, 4"
-        "SUPER, 5, workspace, 5"
-        "SUPER, 6, workspace, 6"
-        "SUPER, 7, workspace, 7"
-        "SUPER, 8, workspace, 8"
-        "SUPER, 9, workspace, 9"
-        "SUPER, 0, workspace, 10"
-
-        # move window to workspace
-        "SUPER ALT, 1, movetoworkspacesilent, 1"
-        "SUPER ALT, 2, movetoworkspacesilent, 2"
-        "SUPER ALT, 3, movetoworkspacesilent, 3"
-        "SUPER ALT, 4, movetoworkspacesilent, 4"
-        "SUPER ALT, 5, movetoworkspacesilent, 5"
-        "SUPER ALT, 6, movetoworkspacesilent, 6"
-        "SUPER ALT, 7, movetoworkspacesilent, 7"
-        "SUPER ALT, 8, movetoworkspacesilent, 8"
-        "SUPER ALT, 9, movetoworkspacesilent, 9"
-        "SUPER ALT, 0, movetoworkspacesilent, 10"
-      ];
-      cursor.no_warps = true;
-      # Host-specific hypr configs will be sourced via host home.nix
-    };
-  };
-
   # Shared config files
   home.file.".config/fastfetch".source = ./fastfetch;
+  home.file.".config/hypr/nix-generated.conf".text = ''
+    exec-once = dbus-update-activation-environment --systemd DISPLAY HYPRLAND_INSTANCE_SIGNATURE WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE && systemctl --user stop hyprland-session.target && systemctl --user start hyprland-session.target
+
+    cursor {
+      no_warps = true
+    }
+  '';
   xdg.configFile."kitty/kitty.conf".source = ./kitty/kitty.conf;
 
   # Thunar settings

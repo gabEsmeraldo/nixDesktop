@@ -6,6 +6,7 @@
     # --- Desktop Hardware ---
     deepcool-digital-linux
     openrgb-with-all-plugins
+    hyprlandPlugins.hyprsplit
 
     # --- Gaming ---
     gamescope
