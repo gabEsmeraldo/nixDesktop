@@ -20,6 +20,7 @@ in
   imports = [
     ../../common/home.nix
     ./apps.nix
+    ./plasma.nix
   ];
 
   home.packages = [
@@ -27,7 +28,7 @@ in
   ];
 
   home.sessionVariables.HYPRLAND_PLUGIN_DIR =
-    "${inputs.hyprsplit.packages.${pkgs.stdenv.hostPlatform.system}.hyprsplit}/lib";
+    "${pkgs.hyprlandPlugins.hyprsplit}/lib";
 
   home.activation.writeHyprlandConfig = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     mkdir -p "$HOME/.config/hypr"
@@ -68,7 +69,7 @@ EOF
     ".config/hypr/execs.conf".source = ./hypr/execs.conf;
     ".config/hypr/wallpaper.conf".source = ./hypr/wallpaper.conf;
     ".config/hypr/nix-generated-desktop.conf".text = ''
-      plugin = ${inputs.hyprsplit.packages.${pkgs.stdenv.hostPlatform.system}.hyprsplit}/lib/libhyprsplit.so
+      plugin = ${pkgs.hyprlandPlugins.hyprsplit}/lib/libhyprsplit.so
 
       plugin {
         hyprsplit {

@@ -10,14 +10,13 @@
     matugen.url = "github:InioX/matugen";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
-    # --- HYPRLAND & PLUGINS ---
-    hyprland.url = "github:hyprwm/Hyprland";
-    hyprsplit = {
-      url = "github:shezdy/hyprsplit";
-      inputs.hyprland.follows = "hyprland";
-    };
-
     nixcord.url = "github:FlameFlag/nixcord";
+
+    plasma-manager = {
+      url = "github:nix-community/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:

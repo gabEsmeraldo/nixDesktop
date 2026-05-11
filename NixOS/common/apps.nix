@@ -3,10 +3,14 @@
 
 {
   home.packages = with pkgs; [
+    # --- Fonts ---
+    nerd-fonts.fira-code
+
     # --- System & Terminal ---
     hyprshade
     fastfetch
     kitty
+    ghostty
     zsh
     git
     wget
@@ -40,6 +44,7 @@
 
     # --- Development Runtimes ---
     nodejs_24
+    corepack_24
     openjdk21
     (lib.lowPrio openjdk17)
     (lib.lowPrio jdk25_headless)

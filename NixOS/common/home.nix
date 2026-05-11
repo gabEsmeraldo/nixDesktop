@@ -1,5 +1,5 @@
 # Common home-manager configuration shared between all hosts
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, lib, ... }:
 
 let
   tmuxResurrectStop = pkgs.writeShellApplication {
@@ -17,6 +17,20 @@ let
       if tmux has-session 2>/dev/null; then
         ${pkgs.tmuxPlugins.resurrect}/share/tmux-plugins/resurrect/scripts/save.sh quiet
         tmux kill-server
+      fi
+    '';
+  };
+
+  tmuxResurrectStart = pkgs.writeShellApplication {
+    name = "tmux-resurrect-start";
+    runtimeInputs = with pkgs; [
+      coreutils
+      tmux
+    ];
+    text = ''
+      sleep 2
+      if tmux has-session 2>/dev/null; then
+        ${pkgs.tmuxPlugins.resurrect}/share/tmux-plugins/resurrect/scripts/restore.sh
       fi
     '';
   };
@@ -82,6 +96,29 @@ in
     };
   };
 
+  programs.ghostty = {
+    enable = true;
+    enableZshIntegration = true;
+    settings = {
+      font-family = "FiraCode Nerd Font";
+      font-size = 11;
+      window-padding-x = 16;
+      window-padding-y = 16;
+      shell-integration = "zsh";
+      command = "${pkgs.zsh}/bin/zsh";
+      confirm-close-surface = false;
+      link-url = true;
+      theme = "matugen";
+    };
+  };
+
+  home.activation.ghosttyThemeInit = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    mkdir -p $HOME/.config/ghostty/themes
+    if [ ! -f $HOME/.config/ghostty/themes/matugen ]; then
+      touch $HOME/.config/ghostty/themes/matugen
+    fi
+  '';
+
   programs.tmux = {
     enable = true;
     shell = "${pkgs.zsh}/bin/zsh";
@@ -120,6 +157,7 @@ in
     Service = {
       Type = "forking";
       ExecStart = "${pkgs.tmux}/bin/tmux new-session -d";
+      ExecStartPost = "${tmuxResurrectStart}/bin/tmux-resurrect-start";
       ExecStop = "${tmuxResurrectStop}/bin/tmux-resurrect-stop";
       KillMode = "control-group";
       RestartSec = 2;
