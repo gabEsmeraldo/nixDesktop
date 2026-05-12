@@ -17,6 +17,17 @@
   };
   console.keyMap = "br-abnt2";
 
+  # LocalSend firewall ports
+  networking.firewall.allowedUDPPorts = [ 53317 ];
+  networking.firewall.allowedTCPPorts = [ 53317 ];
+
+  # Avahi for mDNS discovery (LocalSend, etc.)
+  services.avahi = {
+    enable = true;
+    openFirewall = true;
+    nssmdns = true;
+  };
+
   # Docker
   virtualisation.docker.enable = true;
 
