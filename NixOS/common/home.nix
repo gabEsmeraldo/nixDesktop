@@ -1,5 +1,40 @@
 # Common home-manager configuration shared between all hosts
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, lib, ... }:
+
+let
+  tmuxResurrectStop = pkgs.writeShellApplication {
+    name = "tmux-resurrect-stop";
+    runtimeInputs = with pkgs; [
+      coreutils
+      findutils
+      gawk
+      gnugrep
+      gnused
+      procps
+      tmux
+    ];
+    text = ''
+      if tmux has-session 2>/dev/null; then
+        ${pkgs.tmuxPlugins.resurrect}/share/tmux-plugins/resurrect/scripts/save.sh quiet
+        tmux kill-server
+      fi
+    '';
+  };
+
+  tmuxResurrectStart = pkgs.writeShellApplication {
+    name = "tmux-resurrect-start";
+    runtimeInputs = with pkgs; [
+      coreutils
+      tmux
+    ];
+    text = ''
+      sleep 2
+      if tmux has-session 2>/dev/null; then
+        ${pkgs.tmuxPlugins.resurrect}/share/tmux-plugins/resurrect/scripts/restore.sh
+      fi
+    '';
+  };
+in
 
 {
   imports = [
@@ -21,7 +56,6 @@
     XDG_SESSION_DESKTOP = "Hyprland";
     GTK_THEME = "Adwaita:dark";
     NIXOS_OZONE_WL = "1";
-    HYPRLAND_PLUGIN_DIR = "${inputs.hyprsplit.packages.${pkgs.stdenv.hostPlatform.system}.hyprsplit}/lib";
     SSH_AUTH_SOCK = "$XDG_RUNTIME_DIR/keyring/ssh";
   };
 
@@ -38,8 +72,11 @@
     gtk3.extraConfig = {
       gtk-application-prefer-dark-theme = 1;
     };
-    gtk4.extraConfig = {
-      gtk-application-prefer-dark-theme = 1;
+    gtk4 = {
+      theme = config.gtk.theme;
+      extraConfig = {
+        gtk-application-prefer-dark-theme = 1;
+      };
     };
   };
 
@@ -57,6 +94,75 @@
     settings = {
       shell = "zsh";
     };
+  };
+
+  programs.ghostty = {
+    enable = true;
+    enableZshIntegration = true;
+    settings = {
+      font-family = "FiraCode Nerd Font";
+      font-size = 11;
+      window-padding-x = 16;
+      window-padding-y = 16;
+      shell-integration = "zsh";
+      command = "${pkgs.zsh}/bin/zsh";
+      confirm-close-surface = false;
+      link-url = true;
+      theme = "matugen";
+    };
+  };
+
+  home.activation.ghosttyThemeInit = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    mkdir -p $HOME/.config/ghostty/themes
+    if [ ! -f $HOME/.config/ghostty/themes/matugen ]; then
+      touch $HOME/.config/ghostty/themes/matugen
+    fi
+  '';
+
+  programs.tmux = {
+    enable = true;
+    shell = "${pkgs.zsh}/bin/zsh";
+    terminal = "tmux-256color";
+    mouse = true;
+    plugins = with pkgs.tmuxPlugins; [
+      {
+        plugin = resurrect;
+        extraConfig = ''
+          set -g @resurrect-capture-pane-contents 'on'
+        '';
+      }
+      {
+        plugin = continuum;
+        extraConfig = ''
+          set -g @continuum-restore 'on'
+          set -g @continuum-save-interval '15'
+        '';
+      }
+    ];
+    extraConfig = ''
+      set -ga terminal-overrides ",*:Tc"
+
+      set -g status-style "bg=#1a1110,fg=#f1dfdc"
+      set -g window-status-current-style "bg=#1a1110,fg=#f1dfdc,bold"
+      set -g pane-border-style "fg=#4c4c4c"
+      set -g pane-active-border-style "fg=#f1dfdc"
+    '';
+  };
+
+  systemd.user.services.tmux-server = {
+    Unit = {
+      Description = "tmux server";
+      Documentation = "man:tmux(1)";
+    };
+    Service = {
+      Type = "forking";
+      ExecStart = "${pkgs.tmux}/bin/tmux new-session -d";
+      ExecStartPost = "${tmuxResurrectStart}/bin/tmux-resurrect-start";
+      ExecStop = "${tmuxResurrectStop}/bin/tmux-resurrect-stop";
+      KillMode = "control-group";
+      RestartSec = 2;
+    };
+    Install.WantedBy = [ "default.target" ];
   };
 
   programs.nixcord = {
@@ -78,47 +184,15 @@
     };
   };
 
-  wayland.windowManager.hyprland = {
-    enable = true;
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    plugins = [
-      inputs.hyprsplit.packages.${pkgs.stdenv.hostPlatform.system}.hyprsplit
-    ];
-    settings = {
-      plugin.hyprsplit = {
-        num_workspaces = 10;
-      };
-      bind = [
-        # switch workspace (split)
-        "SUPER, 1, split:workspace, 1"
-        "SUPER, 2, split:workspace, 2"
-        "SUPER, 3, split:workspace, 3"
-        "SUPER, 4, split:workspace, 4"
-        "SUPER, 5, split:workspace, 5"
-        "SUPER, 6, split:workspace, 6"
-        "SUPER, 7, split:workspace, 7"
-        "SUPER, 8, split:workspace, 8"
-        "SUPER, 9, split:workspace, 9"
-        "SUPER, 0, split:workspace, 10"
-
-        # move window to workspace (split)
-        "SUPER ALT, 1, split:movetoworkspacesilent, 1"
-        "SUPER ALT, 2, split:movetoworkspacesilent, 2"
-        "SUPER ALT, 3, split:movetoworkspacesilent, 3"
-        "SUPER ALT, 4, split:movetoworkspacesilent, 4"
-        "SUPER ALT, 5, split:movetoworkspacesilent, 5"
-        "SUPER ALT, 6, split:movetoworkspacesilent, 6"
-        "SUPER ALT, 7, split:movetoworkspacesilent, 7"
-        "SUPER ALT, 8, split:movetoworkspacesilent, 8"
-        "SUPER ALT, 9, split:movetoworkspacesilent, 9"
-        "SUPER ALT, 0, split:movetoworkspacesilent, 10"
-      ];
-      # Host-specific hypr configs will be sourced via host home.nix
-    };
-  };
-
   # Shared config files
   home.file.".config/fastfetch".source = ./fastfetch;
+  home.file.".config/hypr/nix-generated.conf".text = ''
+    exec-once = dbus-update-activation-environment --systemd DISPLAY HYPRLAND_INSTANCE_SIGNATURE WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE && systemctl --user stop hyprland-session.target && systemctl --user start hyprland-session.target
+
+    cursor {
+      no_warps = true
+    }
+  '';
   xdg.configFile."kitty/kitty.conf".source = ./kitty/kitty.conf;
 
   # Thunar settings

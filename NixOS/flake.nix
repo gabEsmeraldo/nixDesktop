@@ -10,18 +10,20 @@
     matugen.url = "github:InioX/matugen";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
-    # --- HYPRLAND & PLUGINS ---
-    hyprland.url = "github:hyprwm/Hyprland";
-    hyprsplit = {
-      url = "github:shezdy/hyprsplit";
-      inputs.hyprland.follows = "hyprland";
-    };
-
     nixcord.url = "github:FlameFlag/nixcord";
+
+    plasma-manager = {
+      url = "github:nix-community/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
   let
+    supportedSystems = [ "x86_64-linux" "aarch64-linux" ];
+    forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
+
     # Helper function to create a NixOS system
     mkHost = { hostName, hostPath }: nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
@@ -41,6 +43,16 @@
       ];
     };
   in {
+    packages = forAllSystems (system:
+      let
+        pkgs = import nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+        };
+      in {
+        ambxst-patched = pkgs.callPackage ./pkgs/ambxst-patched { };
+      });
+
     nixosConfigurations = {
       # Desktop (asphodelus)
       desktop = mkHost {

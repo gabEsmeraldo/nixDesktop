@@ -1,5 +1,5 @@
 {
-  "blurTransition": true,
+  "blurTransition": false,
   "windowPreview": true,
   "wavyLine": true,
   "rotateCoverArt": true,

@@ -1,5 +1,5 @@
 # Laptop-specific home-manager configuration
-{ config, pkgs, inputs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 {
   imports = [
@@ -7,15 +7,18 @@
     ./apps.nix
   ];
 
-  # Laptop-specific Hyprland config sources
-  wayland.windowManager.hyprland.settings.source = [
-    "${config.home.homeDirectory}/.config/hypr/decorations.conf"
-    "${config.home.homeDirectory}/.config/hypr/keybinds.conf"
-    "${config.home.homeDirectory}/.config/hypr/envrules.conf"
-    "${config.home.homeDirectory}/.config/hypr/monitors.conf"
-    "${config.home.homeDirectory}/.config/hypr/execs.conf"
-    "${config.home.homeDirectory}/.local/share/ambxst/hyprland.conf"
-  ];
+  home.activation.writeHyprlandConfig = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    mkdir -p "$HOME/.config/hypr"
+    cat > "$HOME/.config/hypr/hyprland.conf" <<EOF
+source=${config.home.homeDirectory}/.config/hypr/decorations.conf
+source=${config.home.homeDirectory}/.config/hypr/keybinds.conf
+source=${config.home.homeDirectory}/.config/hypr/envrules.conf
+source=${config.home.homeDirectory}/.config/hypr/monitors.conf
+source=${config.home.homeDirectory}/.config/hypr/execs.conf
+source=${config.home.homeDirectory}/.local/share/ambxst/hyprland.conf
+source=${config.home.homeDirectory}/.config/hypr/nix-generated.conf
+EOF
+  '';
 
   # Laptop Hyprland config files
   home.file = {

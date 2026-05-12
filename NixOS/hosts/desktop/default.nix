@@ -27,7 +27,7 @@
   services.avahi = {
     enable = true;
     openFirewall = true;
-    nssmdns = true;
+    nssmdns4 = true;
   };
 
   # OpenRGB (desktop RGB control)
@@ -40,10 +40,10 @@
 
   # Disable automatic sleep/suspend
   services.logind = {
-    lidSwitch = "ignore";
-    lidSwitchDocked = "ignore";
-    lidSwitchExternalPower = "ignore";
     settings.Login = {
+      HandleLidSwitch = "ignore";
+      HandleLidSwitchDocked = "ignore";
+      HandleLidSwitchExternalPower = "ignore";
       HandlePowerKey = "ignore";
       IdleAction = "ignore";
       IdleActionSec = 0;

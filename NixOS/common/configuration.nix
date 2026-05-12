@@ -1,5 +1,5 @@
 # Common system configuration shared between all hosts
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports = [
@@ -33,6 +33,8 @@
   # Hyprland
   programs.hyprland = {
     enable = true;
+    package = pkgs.hyprland;
+    portalPackage = pkgs.xdg-desktop-portal-hyprland;
     withUWSM = false;
     xwayland.enable = true;
   };
@@ -105,17 +107,37 @@
   users.users.gabzu = {
     isNormalUser = true;
     description = "gabzu";
-    extraGroups = [ "networkmanager" "wheel" "dialout" "i2c" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" "i2c" "docker" "kvm" ];
   };
 
   # Firefox
   programs.firefox.enable = true;
 
-  # Android AAPT2 build fix
+  # Android AAPT2 build + emulator runtime libs
+  # (Note: systemd 258+ handles adb uaccess automatically; android-tools is already in home-manager apps.nix)
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
     zlib
     libcxx
+    libpulseaudio
+    alsa-lib
+    libGL
+    vulkan-loader
+    fontconfig
+    freetype
+    dbus
+    expat
+    libbsd
+    libdrm
+    libxkbcommon
+    libx11
+    libxi
+    libxcursor
+    libxrandr
+    libxrender
+    libxtst
+    libxcb
+    libxshmfence
   ];
 
   # Display Manager

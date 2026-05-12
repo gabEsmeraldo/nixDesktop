@@ -8,6 +8,7 @@
             },
             "key": "",
             "modifiers": [
+                "SUPER"
             ]
         },
         "clipboard": {
@@ -108,7 +109,7 @@
                     },
                     "id": "ambxst.overview"
                 },
-                "key": "TAB",
+                "key": "",
                 "modifiers": [
                     "SUPER"
                 ]
@@ -191,8 +192,10 @@
                 },
                 "id": "ambxst.tmux"
             },
-            "key": "",
+            "key": "T",
             "modifiers": [
+                "SUPER",
+                "ALT"
             ]
         },
         "wallpapers": {
@@ -201,7 +204,7 @@
                 },
                 "id": "ambxst.wallpapers"
             },
-            "key": "COMMA",
+            "key": "",
             "modifiers": [
                 "SUPER"
             ]
@@ -212,8 +215,9 @@
             "actions": [
                 {
                     "args": {
+                        "offset": "-1"
                     },
-                    "id": "window.close",
+                    "id": "workspace.switch-occupied",
                     "layouts": [
                     ]
                 }
@@ -221,503 +225,7 @@
             "enabled": false,
             "keys": [
                 {
-                    "key": "C",
-                    "modifiers": [
-                        "SUPER"
-                    ]
-                }
-            ],
-            "name": "Close Window"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "argument": "1",
-                        "dispatcher": "split:workspace",
-                        "flags": ""
-                    },
-                    "id": "legacy.dispatcher",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "1",
-                    "modifiers": [
-                        "SUPER"
-                    ]
-                }
-            ],
-            "name": "Workspace 1"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "argument": "2",
-                        "dispatcher": "split:workspace",
-                        "flags": ""
-                    },
-                    "id": "legacy.dispatcher",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "2",
-                    "modifiers": [
-                        "SUPER"
-                    ]
-                }
-            ],
-            "name": "Workspace 2"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "argument": "3",
-                        "dispatcher": "split:workspace",
-                        "flags": ""
-                    },
-                    "id": "legacy.dispatcher",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "3",
-                    "modifiers": [
-                        "SUPER"
-                    ]
-                }
-            ],
-            "name": "Workspace 3"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "argument": "4",
-                        "dispatcher": "split:workspace",
-                        "flags": ""
-                    },
-                    "id": "legacy.dispatcher",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "4",
-                    "modifiers": [
-                        "SUPER"
-                    ]
-                }
-            ],
-            "name": "Workspace 4"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "argument": "5",
-                        "dispatcher": "split:workspace",
-                        "flags": ""
-                    },
-                    "id": "legacy.dispatcher",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "5",
-                    "modifiers": [
-                        "SUPER"
-                    ]
-                }
-            ],
-            "name": "Workspace 5"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "argument": "6",
-                        "dispatcher": "split:workspace",
-                        "flags": ""
-                    },
-                    "id": "legacy.dispatcher",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "6",
-                    "modifiers": [
-                        "SUPER"
-                    ]
-                }
-            ],
-            "name": "Workspace 6"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "argument": "7",
-                        "dispatcher": "split:workspace",
-                        "flags": ""
-                    },
-                    "id": "legacy.dispatcher",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "7",
-                    "modifiers": [
-                        "SUPER"
-                    ]
-                }
-            ],
-            "name": "Workspace 7"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "argument": "8",
-                        "dispatcher": "split:workspace",
-                        "flags": ""
-                    },
-                    "id": "legacy.dispatcher",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "8",
-                    "modifiers": [
-                        "SUPER"
-                    ]
-                }
-            ],
-            "name": "Workspace 8"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "argument": "9",
-                        "dispatcher": "split:workspace",
-                        "flags": ""
-                    },
-                    "id": "legacy.dispatcher",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "9",
-                    "modifiers": [
-                        "SUPER"
-                    ]
-                }
-            ],
-            "name": "Workspace 9"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "argument": "10",
-                        "dispatcher": "split:workspace",
-                        "flags": ""
-                    },
-                    "id": "legacy.dispatcher",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "0",
-                    "modifiers": [
-                        "SUPER"
-                    ]
-                }
-            ],
-            "name": "Workspace 10"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "argument": "1",
-                        "dispatcher": "split:movetoworkspacesilent",
-                        "flags": ""
-                    },
-                    "id": "legacy.dispatcher",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": false,
-            "keys": [
-                {
-                    "key": "1",
-                    "modifiers": [
-                        "SUPER",
-                        "SHIFT"
-                    ]
-                }
-            ],
-            "name": "Move to Workspace 1"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "index": "2"
-                    },
-                    "id": "workspace.move-window",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": false,
-            "keys": [
-                {
-                    "key": "2",
-                    "modifiers": [
-                        "SUPER",
-                        "SHIFT"
-                    ]
-                }
-            ],
-            "name": "Move to Workspace 2"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "index": "3"
-                    },
-                    "id": "workspace.move-window",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": false,
-            "keys": [
-                {
-                    "key": "3",
-                    "modifiers": [
-                        "SUPER",
-                        "SHIFT"
-                    ]
-                }
-            ],
-            "name": "Move to Workspace 3"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "index": "4"
-                    },
-                    "id": "workspace.move-window",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": false,
-            "keys": [
-                {
-                    "key": "4",
-                    "modifiers": [
-                        "SUPER",
-                        "SHIFT"
-                    ]
-                }
-            ],
-            "name": "Move to Workspace 4"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "index": "5"
-                    },
-                    "id": "workspace.move-window",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": false,
-            "keys": [
-                {
-                    "key": "5",
-                    "modifiers": [
-                        "SUPER",
-                        "SHIFT"
-                    ]
-                }
-            ],
-            "name": "Move to Workspace 5"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "index": "6"
-                    },
-                    "id": "workspace.move-window",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": false,
-            "keys": [
-                {
-                    "key": "6",
-                    "modifiers": [
-                        "SUPER",
-                        "SHIFT"
-                    ]
-                }
-            ],
-            "name": "Move to Workspace 6"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "index": "7"
-                    },
-                    "id": "workspace.move-window",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": false,
-            "keys": [
-                {
-                    "key": "7",
-                    "modifiers": [
-                        "SUPER",
-                        "SHIFT"
-                    ]
-                }
-            ],
-            "name": "Move to Workspace 7"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "index": "8"
-                    },
-                    "id": "workspace.move-window",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": false,
-            "keys": [
-                {
-                    "key": "8",
-                    "modifiers": [
-                        "SUPER",
-                        "SHIFT"
-                    ]
-                }
-            ],
-            "name": "Move to Workspace 8"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "index": "9"
-                    },
-                    "id": "workspace.move-window",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": false,
-            "keys": [
-                {
-                    "key": "9",
-                    "modifiers": [
-                        "SUPER",
-                        "SHIFT"
-                    ]
-                }
-            ],
-            "name": "Move to Workspace 9"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "index": "10"
-                    },
-                    "id": "workspace.move-window",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": false,
-            "keys": [
-                {
-                    "key": "0",
-                    "modifiers": [
-                        "SUPER",
-                        "SHIFT"
-                    ]
-                }
-            ],
-            "name": "Move to Workspace 10"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "argument": "e+1",
-                        "dispatcher": "split:workspace",
-                        "flags": ""
-                    },
-                    "id": "legacy.dispatcher",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "mouse_up",
+                    "key": "mouse_down",
                     "modifiers": [
                         "SUPER"
                     ]
@@ -729,19 +237,17 @@
             "actions": [
                 {
                     "args": {
-                        "argument": "e-1",
-                        "dispatcher": "split:workspace",
-                        "flags": ""
+                        "offset": "+1"
                     },
-                    "id": "legacy.dispatcher",
+                    "id": "workspace.switch-occupied",
                     "layouts": [
                     ]
                 }
             ],
-            "enabled": true,
+            "enabled": false,
             "keys": [
                 {
-                    "key": "mouse_down",
+                    "key": "mouse_up",
                     "modifiers": [
                         "SUPER"
                     ]
@@ -849,7 +355,7 @@
                     ]
                 }
             ],
-            "enabled": true,
+            "enabled": false,
             "keys": [
                 {
                     "key": "mouse:272",
@@ -870,7 +376,7 @@
                     ]
                 }
             ],
-            "enabled": true,
+            "enabled": false,
             "keys": [
                 {
                     "key": "mouse:273",
@@ -891,7 +397,7 @@
                     ]
                 }
             ],
-            "enabled": true,
+            "enabled": false,
             "keys": [
                 {
                     "key": "XF86AudioPlay",
@@ -911,7 +417,7 @@
                     ]
                 }
             ],
-            "enabled": true,
+            "enabled": false,
             "keys": [
                 {
                     "key": "XF86AudioPrev",
@@ -931,7 +437,7 @@
                     ]
                 }
             ],
-            "enabled": true,
+            "enabled": false,
             "keys": [
                 {
                     "key": "XF86AudioNext",
@@ -985,14 +491,13 @@
             "actions": [
                 {
                     "args": {
-                        "command": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
                     },
-                    "id": "command.run",
+                    "id": "audio.volume-up",
                     "layouts": [
                     ]
                 }
             ],
-            "enabled": true,
+            "enabled": false,
             "keys": [
                 {
                     "key": "XF86AudioRaiseVolume",
@@ -1006,14 +511,13 @@
             "actions": [
                 {
                     "args": {
-                        "command": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%-"
                     },
-                    "id": "command.run",
+                    "id": "audio.volume-down",
                     "layouts": [
                     ]
                 }
             ],
-            "enabled": true,
+            "enabled": false,
             "keys": [
                 {
                     "key": "XF86AudioLowerVolume",
@@ -1033,7 +537,7 @@
                     ]
                 }
             ],
-            "enabled": true,
+            "enabled": false,
             "keys": [
                 {
                     "key": "XF86AudioMute",
@@ -1053,7 +557,7 @@
                     ]
                 }
             ],
-            "enabled": true,
+            "enabled": false,
             "keys": [
                 {
                     "key": "XF86MonBrightnessUp",
@@ -1073,7 +577,7 @@
                     ]
                 }
             ],
-            "enabled": true,
+            "enabled": false,
             "keys": [
                 {
                     "key": "XF86MonBrightnessDown",
@@ -1171,9 +675,8 @@
             "actions": [
                 {
                     "args": {
-                        "command": "hyprctl dispatch dpms off"
                     },
-                    "id": "command.run",
+                    "id": "system.dpms-off",
                     "layouts": [
                     ]
                 }
@@ -1192,9 +695,8 @@
             "actions": [
                 {
                     "args": {
-                        "command": "hyprctl dispatch dpms on"
                     },
-                    "id": "command.run",
+                    "id": "system.dpms-on",
                     "layouts": [
                     ]
                 }
@@ -1217,6 +719,7 @@
                     },
                     "id": "scrolling.focus",
                     "layouts": [
+                        "scrolling"
                     ]
                 },
                 {
@@ -1225,17 +728,13 @@
                     },
                     "id": "window.focus",
                     "layouts": [
+                        "dwindle",
+                        "master"
                     ]
                 }
             ],
-            "enabled": false,
+            "enabled": true,
             "keys": [
-                {
-                    "key": "Up",
-                    "modifiers": [
-                        "SUPER"
-                    ]
-                },
                 {
                     "key": "k",
                     "modifiers": [
@@ -1254,6 +753,7 @@
                     },
                     "id": "scrolling.focus",
                     "layouts": [
+                        "scrolling"
                     ]
                 },
                 {
@@ -1262,17 +762,13 @@
                     },
                     "id": "window.focus",
                     "layouts": [
+                        "master",
+                        "dwindle"
                     ]
                 }
             ],
-            "enabled": false,
+            "enabled": true,
             "keys": [
-                {
-                    "key": "Down",
-                    "modifiers": [
-                        "SUPER"
-                    ]
-                },
                 {
                     "key": "j",
                     "modifiers": [
@@ -1291,6 +787,7 @@
                     },
                     "id": "scrolling.focus",
                     "layouts": [
+                        "scrolling"
                     ]
                 },
                 {
@@ -1299,17 +796,13 @@
                     },
                     "id": "window.focus",
                     "layouts": [
+                        "dwindle",
+                        "master"
                     ]
                 }
             ],
-            "enabled": false,
+            "enabled": true,
             "keys": [
-                {
-                    "key": "Left",
-                    "modifiers": [
-                        "SUPER"
-                    ]
-                },
                 {
                     "key": "z",
                     "modifiers": [
@@ -1335,6 +828,7 @@
                     },
                     "id": "scrolling.focus",
                     "layouts": [
+                        "scrolling"
                     ]
                 },
                 {
@@ -1343,17 +837,13 @@
                     },
                     "id": "window.focus",
                     "layouts": [
+                        "master",
+                        "dwindle"
                     ]
                 }
             ],
-            "enabled": false,
+            "enabled": true,
             "keys": [
-                {
-                    "key": "Right",
-                    "modifiers": [
-                        "SUPER"
-                    ]
-                },
                 {
                     "key": "x",
                     "modifiers": [
@@ -1379,6 +869,8 @@
                     },
                     "id": "window.move",
                     "layouts": [
+                        "master",
+                        "dwindle"
                     ]
                 },
                 {
@@ -1387,6 +879,7 @@
                     },
                     "id": "scrolling.move-window",
                     "layouts": [
+                        "scrolling"
                     ]
                 }
             ],
@@ -1417,6 +910,8 @@
                     },
                     "id": "window.move",
                     "layouts": [
+                        "dwindle",
+                        "master"
                     ]
                 },
                 {
@@ -1425,6 +920,7 @@
                     },
                     "id": "scrolling.move-window",
                     "layouts": [
+                        "scrolling"
                     ]
                 }
             ],
@@ -1455,6 +951,8 @@
                     },
                     "id": "window.move",
                     "layouts": [
+                        "master",
+                        "dwindle"
                     ]
                 },
                 {
@@ -1463,6 +961,7 @@
                     },
                     "id": "scrolling.move-window",
                     "layouts": [
+                        "scrolling"
                     ]
                 }
             ],
@@ -1493,6 +992,8 @@
                     },
                     "id": "window.move",
                     "layouts": [
+                        "master",
+                        "dwindle"
                     ]
                 },
                 {
@@ -1531,6 +1032,7 @@
                     },
                     "id": "scrolling.resize-column",
                     "layouts": [
+                        "scrolling"
                     ]
                 },
                 {
@@ -1539,6 +1041,8 @@
                     },
                     "id": "window.resize",
                     "layouts": [
+                        "master",
+                        "dwindle"
                     ]
                 }
             ],
@@ -1569,6 +1073,7 @@
                     },
                     "id": "scrolling.resize-column",
                     "layouts": [
+                        "scrolling"
                     ]
                 },
                 {
@@ -1577,6 +1082,8 @@
                     },
                     "id": "window.resize",
                     "layouts": [
+                        "master",
+                        "dwindle"
                     ]
                 }
             ],
@@ -1666,6 +1173,7 @@
                     },
                     "id": "scrolling.promote",
                     "layouts": [
+                        "scrolling"
                     ]
                 }
             ],
@@ -1688,6 +1196,7 @@
                     },
                     "id": "scrolling.toggle-fit",
                     "layouts": [
+                        "scrolling"
                     ]
                 }
             ],
@@ -1710,6 +1219,7 @@
                     },
                     "id": "scrolling.toggle-full-column",
                     "layouts": [
+                        "scrolling"
                     ]
                 }
             ],
@@ -1733,6 +1243,7 @@
                     },
                     "id": "scrolling.swap-column",
                     "layouts": [
+                        "scrolling"
                     ]
                 }
             ],
@@ -1765,6 +1276,7 @@
                     },
                     "id": "scrolling.swap-column",
                     "layouts": [
+                        "scrolling"
                     ]
                 }
             ],
@@ -1797,6 +1309,7 @@
                     },
                     "id": "scrolling.move-column-workspace",
                     "layouts": [
+                        "scrolling"
                     ]
                 }
             ],
@@ -1821,6 +1334,7 @@
                     },
                     "id": "scrolling.move-column-workspace",
                     "layouts": [
+                        "scrolling"
                     ]
                 }
             ],
@@ -1845,6 +1359,7 @@
                     },
                     "id": "scrolling.move-column-workspace",
                     "layouts": [
+                        "scrolling"
                     ]
                 }
             ],
@@ -1869,6 +1384,7 @@
                     },
                     "id": "scrolling.move-column-workspace",
                     "layouts": [
+                        "scrolling"
                     ]
                 }
             ],
@@ -1893,6 +1409,7 @@
                     },
                     "id": "scrolling.move-column-workspace",
                     "layouts": [
+                        "scrolling"
                     ]
                 }
             ],
@@ -1917,6 +1434,7 @@
                     },
                     "id": "scrolling.move-column-workspace",
                     "layouts": [
+                        "scrolling"
                     ]
                 }
             ],
@@ -1941,6 +1459,7 @@
                     },
                     "id": "scrolling.move-column-workspace",
                     "layouts": [
+                        "scrolling"
                     ]
                 }
             ],
@@ -1965,6 +1484,7 @@
                     },
                     "id": "scrolling.move-column-workspace",
                     "layouts": [
+                        "scrolling"
                     ]
                 }
             ],
@@ -1989,6 +1509,7 @@
                     },
                     "id": "scrolling.move-column-workspace",
                     "layouts": [
+                        "scrolling"
                     ]
                 }
             ],
@@ -2013,6 +1534,7 @@
                     },
                     "id": "scrolling.move-column-workspace",
                     "layouts": [
+                        "scrolling"
                     ]
                 }
             ],
@@ -2028,122 +1550,6 @@
                 }
             ],
             "name": "Move Column To Workspace 10"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "command": "pavucontrol"
-                    },
-                    "id": "command.run",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": true,
-            "keys": [
-                {
-                    "key": "v",
-                    "modifiers": [
-                        "SUPER",
-                        "SHIFT"
-                    ]
-                }
-            ],
-            "name": "Pavucontrol"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "command": "code"
-                    },
-                    "id": "command.run",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": false,
-            "keys": [
-                {
-                    "key": "C",
-                    "modifiers": [
-                        "SUPER"
-                    ]
-                }
-            ],
-            "name": "VSCODE"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-<<<<<<< HEAD
-=======
-                        "command": "wpctl set-default 89 && \nnotify-send \"Output Changed\" \"IEM\""
-                    },
-                    "id": "command.run",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": false,
-            "keys": [
-                {
-                    "key": "1",
-                    "modifiers": [
-                        "SUPER",
-                        "CTRL"
-                    ]
-                }
-            ],
-            "name": "IEM"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
-                        "command": "wpctl set-default 90 && \nnotify-send \"Output Changed\" \"Caixa de Som\""
-                    },
-                    "id": "command.run",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": false,
-            "keys": [
-                {
-                    "key": "2",
-                    "modifiers": [
-                        "SUPER",
-                        "CTRL"
-                    ]
-                }
-            ],
-            "name": "Caixa de Som"
-        },
-        {
-            "actions": [
-                {
-                    "args": {
->>>>>>> 8f918fdb0641505a1fc421349c94beab8cc02015
-                        "command": "md.obsidian.Obsidian"
-                    },
-                    "id": "command.run",
-                    "layouts": [
-                    ]
-                }
-            ],
-            "enabled": false,
-            "keys": [
-                {
-                    "key": "Z",
-                    "modifiers": [
-                        "SUPER"
-                    ]
-                }
-            ],
-            "name": "Obsidian"
         }
     ],
     "defaultAmbxstBinds": {

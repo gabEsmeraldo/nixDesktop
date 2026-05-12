@@ -46,8 +46,8 @@
   # Battery optimization
   powerManagement.enable = true;
 
-  # Backlight control
-  programs.light.enable = true;
+  # Backlight control: brightnessctl (installed in hosts/laptop/apps.nix) uses
+  # the systemd-logind API directly, so no NixOS module is required.
 
   # Touchpad (if needed beyond defaults)
   # services.libinput.enable = true;

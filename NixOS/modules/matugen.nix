@@ -15,6 +15,12 @@
   output_path = '~/.config/kitty/colors.conf'
   post_hook = 'pkill -SIGUSR1 kitty'
 
+  [templates.ghostty]
+  input_path = '${../templates/ghostty.conf}'
+  output_path = '~/.config/ghostty/themes/matugen'
+  # Ghostty 1.2.0+ reloads config on SIGUSR2 (PR #7759).
+  post_hook = 'pkill -SIGUSR2 ghostty || true'
+
 '';
 }
 
