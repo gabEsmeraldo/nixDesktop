@@ -33,6 +33,7 @@
     codex
     claude-code
     claude-monitor
+    parsec-bin
 
     # --- Editors & IDEs ---
     vim
@@ -57,6 +58,7 @@
     erlang
     android-tools
     android-studio
+    nodemon
 
     # --- Communication & Social ---
     anytype
