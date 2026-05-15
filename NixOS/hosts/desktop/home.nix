@@ -21,7 +21,144 @@ in
     ../../common/home.nix
     ./apps.nix
     ./plasma.nix
+    inputs.niri.homeModules.niri
   ];
+
+  programs.niri.settings = {
+    outputs."DP-2" = {
+      mode = { width = 2560; height = 1440; refresh = 180.0; };
+      position = { x = 0; y = 0; };
+    };
+    outputs."DP-3" = {
+      mode = null; # auto
+      transform.rotation = 90;
+    };
+
+    input = {
+      keyboard.xkb = { layout = "us"; variant = "intl"; };
+      mouse.accel-speed = -0.4;
+      tablet.map-to-output = "DP-2";
+    };
+
+    layout = {
+      gaps = 8;
+      border = {
+        width = 2;
+        active.color = "#cba6f7";
+        inactive.color = "#313244";
+      };
+    };
+
+    workspaces = {
+      browser = {};
+      code = {};
+      media = {};
+      gaming = {};
+      social = {};
+    };
+
+    spawn-at-startup = [
+      { command = [ "flatpak" "run" "app.zen_browser.zen" ]; }
+      { command = [ "spotify" ]; }
+      { command = [ "discord" ]; }
+      { command = [ "openrgb" "--startminimized" "-p" "Rosio" ]; }
+      { command = [ "sudo" "deepcool-digital-linux" ]; }
+      { command = [ "localsend_app" "--hidden" ]; }
+      { command = [ "linux-wallpaperengine" "--screen-root" "DP-2" "--silent" "3241251648" ]; }
+      { command = [ "linux-wallpaperengine" "--screen-root" "DP-3" "--silent" "2984411413" ]; }
+    ];
+
+    window-rules = [
+      # Discord and Spotify on social workspace
+      { matches = [{ app-id = "^discord$"; }]; open-on-workspace = "social"; }
+      { matches = [{ app-id = "^Spotify$"; title = "^Spotify.*"; }]; open-on-workspace = "social"; }
+      # Browser on browser workspace
+      { matches = [{ app-id = "^zen$"; }]; open-on-workspace = "browser"; }
+      # Terminal sizing
+      { matches = [{ app-id = "^com\\.mitchellh\\.ghostty$"; }]; default-column-width.fixed = 1200; }
+      { matches = [{ app-id = "^kitty$"; }]; default-column-width.fixed = 1200; }
+      # Games fullscreen
+      { matches = [{ app-id = "^WarThunder$"; }]; open-fullscreen = true; }
+    ];
+
+    binds = with { c = "Ctrl"; s = "Super"; sh = "Shift"; a = "Alt"; }; {
+      # Apps
+      "${s}+T".action.spawn = [ "ghostty" ];
+      "${s}+${sh}+T".action.spawn = [ "kitty" ];
+      "${s}+E".action.spawn = [ "thunar" ];
+      "${s}+C".action.spawn = [ "code" ];
+      "${s}+Z".action.spawn = [ "md.obsidian.Obsidian" ];
+      "${s}+${sh}+V".action.spawn = [ "pavucontrol" ];
+      "${s}+${sh}+D".action.spawn = [ "sh" "-c" "cd /home/gabzu/.config/deej && ./deej-release" ];
+      "${s}+Comma".action.spawn = [ "ambxst" "run" "wallpapers" ];
+
+      # Window management
+      "${s}+Q".action.close-window = {};
+      "${s}+W".action.toggle-window-floating = {};
+      "${s}+F".action.fullscreen-window = {};
+
+      # Focus navigation
+      "${s}+Left".action.focus-column-left = {};
+      "${s}+Right".action.focus-column-right = {};
+      "${s}+Up".action.focus-window-up = {};
+      "${s}+Down".action.focus-window-down = {};
+
+      # Move windows
+      "${s}+${sh}+Left".action.move-column-left = {};
+      "${s}+${sh}+Right".action.move-column-right = {};
+      "${s}+${sh}+Up".action.move-window-up = {};
+      "${s}+${sh}+Down".action.move-window-down = {};
+
+      # Workspace navigation (Ctrl+Alt+Arrow — same as Hyprland)
+      "${c}+${a}+Right".action.focus-workspace-down = {};
+      "${c}+${a}+Left".action.focus-workspace-up = {};
+
+      # Workspace by number (Super+0-9)
+      "${s}+1".action.focus-workspace = 1;
+      "${s}+2".action.focus-workspace = 2;
+      "${s}+3".action.focus-workspace = 3;
+      "${s}+4".action.focus-workspace = 4;
+      "${s}+5".action.focus-workspace = 5;
+      "${s}+6".action.focus-workspace = 6;
+      "${s}+7".action.focus-workspace = 7;
+      "${s}+8".action.focus-workspace = 8;
+      "${s}+9".action.focus-workspace = 9;
+      "${s}+0".action.focus-workspace = 10;
+
+      # Move window to workspace (Super+Alt+0-9)
+      "${s}+${a}+1".action.move-window-to-workspace = 1;
+      "${s}+${a}+2".action.move-window-to-workspace = 2;
+      "${s}+${a}+3".action.move-window-to-workspace = 3;
+      "${s}+${a}+4".action.move-window-to-workspace = 4;
+      "${s}+${a}+5".action.move-window-to-workspace = 5;
+      "${s}+${a}+6".action.move-window-to-workspace = 6;
+      "${s}+${a}+7".action.move-window-to-workspace = 7;
+      "${s}+${a}+8".action.move-window-to-workspace = 8;
+      "${s}+${a}+9".action.move-window-to-workspace = 9;
+      "${s}+${a}+0".action.move-window-to-workspace = 10;
+
+      # Desktop-specific: DAC switching
+      "${s}+${c}+1".action.spawn = [ "sh" "/home/gabzu/.config/scripts/switchDAC.sh" ];
+      "${s}+${c}+2".action.spawn = [ "sh" "/home/gabzu/.config/scripts/switchEDIFIER.sh" ];
+
+      # Scroll through workspaces
+      "${s}+WheelScrollDown".action.focus-workspace-down = {};
+      "${s}+WheelScrollUp".action.focus-workspace-up = {};
+
+      # Column sizing
+      "${s}+Minus".action.set-column-width = "-10%";
+      "${s}+Equal".action.set-column-width = "+10%";
+
+      # Media keys
+      "XF86AudioRaiseVolume".action.spawn = [ "wpctl" "set-volume" "-l" "1" "@DEFAULT_AUDIO_SINK@" "5%+" ];
+      "XF86AudioLowerVolume".action.spawn = [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-" ];
+      "XF86AudioMute".action.spawn = [ "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle" ];
+      "XF86AudioMicMute".action.spawn = [ "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle" ];
+      "XF86AudioNext".action.spawn = [ "playerctl" "next" ];
+      "XF86AudioPrev".action.spawn = [ "playerctl" "previous" ];
+      "XF86AudioPlay".action.spawn = [ "playerctl" "play-pause" ];
+    };
+  };
 
   home.packages = [
     easyEffectsGui

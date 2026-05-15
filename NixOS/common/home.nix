@@ -52,8 +52,6 @@ in
   programs.home-manager.enable = true;
 
   home.sessionVariables = {
-    XDG_CURRENT_DESKTOP = "Hyprland";
-    XDG_SESSION_DESKTOP = "Hyprland";
     GTK_THEME = "Adwaita:dark";
     NIXOS_OZONE_WL = "1";
     SSH_AUTH_SOCK = "$XDG_RUNTIME_DIR/keyring/ssh";

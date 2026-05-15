@@ -4,6 +4,8 @@
 {
   imports = [
     ../../common/configuration.nix
+    ../../modules/keyboard-debounce.nix
+    ../../modules/niri.nix
     ./hardware-configuration.nix
   ];
 
@@ -14,6 +16,14 @@
   services.xserver.xkb = {
     layout = "br";
     variant = "";
+  };
+
+  # Filter chatter on the Akko mechanical keyboard (worn switches double-fire `2`).
+  services.keyboardDebounce = {
+    enable = true;
+    devices = [
+      { name = "Akko 2.4G Wireless Keyboard"; thresholdMs = 40; }
+    ];
   };
   console.keyMap = "br-abnt2";
   console.font = "ter-v24n";
