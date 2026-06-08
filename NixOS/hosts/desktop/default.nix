@@ -5,7 +5,6 @@
   imports = [
     ../../common/configuration.nix
     ../../modules/keyboard-debounce.nix
-    ../../modules/niri.nix
     ./hardware-configuration.nix
   ];
 
