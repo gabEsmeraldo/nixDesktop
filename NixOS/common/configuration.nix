@@ -28,6 +28,23 @@
 
   # Nix settings
   nixpkgs.config.allowUnfree = true;
+
+  # Workaround for upstream nixpkgs breakage on the 2026-05-15 unstable bump:
+  #   - discord: brotli/tar source mismatch
+  #   - hyprsplit 0.54.2: source incompatible with bundled hyprland 0.55.1
+  # Pull the affected packages from the prior known-good nixpkgs. hyprland
+  # itself is overridden too so plugin ABI stays consistent with the plugin.
+  nixpkgs.overlays = [
+    (final: prev:
+      let
+        prevPkgs = import inputs.nixpkgs-prev {
+          inherit (final.stdenv.hostPlatform) system;
+          config.allowUnfree = true;
+        };
+      in {
+        inherit (prevPkgs) discord discord-ptb discord-canary discord-development hyprland hyprlandPlugins;
+      })
+  ];
   nix.settings = {
     extra-experimental-features = [ "nix-command" "flakes" ];
     substituters = ["https://hyprland.cachix.org"];
@@ -120,11 +137,23 @@
   users.users.gabzu = {
     isNormalUser = true;
     description = "gabzu";
-    extraGroups = [ "networkmanager" "wheel" "dialout" "i2c" "docker" "kvm" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" "i2c" "docker" "kvm" "input" ];
   };
 
   # Firefox
   programs.firefox.enable = true;
+
+  # GPU screen recorder (enables non-portal backend with required setuid wrapper)
+  programs.gpu-screen-recorder.enable = true;
+  # ambxst checks /run/wrappers/bin/gpu-screen-recorder to enable direct
+  # (region/window/screen) capture modes; nixpkgs only wraps gsr-kms-server,
+  # so add a wrapper for the main binary as well.
+  security.wrappers.gpu-screen-recorder = {
+    owner = "root";
+    group = "root";
+    capabilities = "cap_sys_nice+ep";
+    source = "${pkgs.gpu-screen-recorder}/bin/gpu-screen-recorder";
+  };
 
   # Android AAPT2 build + emulator runtime libs
   # (Note: systemd 258+ handles adb uaccess automatically; android-tools is already in home-manager apps.nix)

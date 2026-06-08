@@ -24,7 +24,15 @@
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
-  swapDevices = [ ];
+  swapDevices = [{
+    device = "/var/swapfile";
+    size = 32768;
+  }];
+
+  # resume_offset must be updated after first boot by running:
+  #   sudo filefrag -v /var/swapfile | awk 'FNR==4{gsub(/\./,""); print $4}'
+  # then set boot.kernelParams = [ "resume_offset=<value>" ] in desktop/default.nix
+  boot.resumeDevice = "/dev/disk/by-uuid/3a44cada-58e2-4a76-81ad-48af8e7baea5";
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's

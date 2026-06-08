@@ -166,7 +166,9 @@
                 "action": {
                     "args": {
                     },
-                    "id": "ambxst.screenshot"
+                    "id": "ambxst.screenshot",
+                    "layouts": [
+                    ]
                 },
                 "key": "S",
                 "modifiers": [

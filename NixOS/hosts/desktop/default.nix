@@ -74,6 +74,9 @@
 
     # CH510 MESH DIGITAL
     SUBSYSTEM=="hidraw", ATTRS{idVendor}=="34d3", ATTRS{idProduct}=="1100", MODE="0666"
+
+    # Steam Input virtual gamepad creation (DualSense -> emulated Xbox pad)
+    KERNEL=="uinput", SUBSYSTEM=="misc", TAG+="uaccess", OPTIONS+="static_node=uinput", GROUP="input", MODE="0660"
   '';
 
   # Nvidia GPU
@@ -81,11 +84,18 @@
 
   hardware.nvidia = {
     modesetting.enable = true;
-    powerManagement.enable = false;
+    powerManagement.enable = true;
     powerManagement.finegrained = false;
     open = true;
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
+  };
+
+  boot.kernelParams = [ "resume_offset=<12189696>" ];
+
+  systemd.sleep.settings.Sleep = {
+    HybridSleepMode = [ "suspend" "platform" "shutdown" ];
+    HybridSleepState = "disk";
   };
 
   # Disable Toslink suspend (desktop audio setup)

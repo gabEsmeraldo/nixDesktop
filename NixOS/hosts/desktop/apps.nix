@@ -10,8 +10,8 @@
 
     # --- Gaming ---
     gamescope
-    heroic
-    hydralauncher
+    # heroic
+    # hydralauncher
     # lutris
     protonplus
     prismlauncher

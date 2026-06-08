@@ -3,6 +3,10 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    # Pinned nixpkgs for packages that broke in the 2026-05-15 unstable bump
+    # (discord brotli source mismatch; hyprsplit incompatible with hyprland
+    # 0.55.1). Remove or bump once upstream catches up.
+    nixpkgs-prev.url = "github:NixOS/nixpkgs/15f4ee454b1dce334612fa6843b3e05cf546efab";
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
