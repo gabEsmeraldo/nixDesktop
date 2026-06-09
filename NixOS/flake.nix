@@ -42,7 +42,7 @@
             extraSpecialArgs = { inherit inputs; };
             users.gabzu = import ./hosts/${hostName}/home.nix;
           };
-          home-manager.backupFileExtension = "backup";
+          home-manager.backupFileExtension = "hm-bak-${toString self.lastModified}";
         }
       ];
     };
