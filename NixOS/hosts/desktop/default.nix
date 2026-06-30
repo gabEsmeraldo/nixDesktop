@@ -47,6 +47,10 @@
     server.port = 6742;
   };
 
+  # Piper uses ratbagd; Logitech wireless receivers also need their udev rules.
+  services.ratbagd.enable = true;
+  hardware.logitech.wireless.enable = true;
+
   # Disable automatic sleep/suspend
   services.logind = {
     settings.Login = {

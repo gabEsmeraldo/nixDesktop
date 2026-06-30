@@ -15,21 +15,24 @@
     # lutris
     protonplus
     prismlauncher
+    # libratbag
+    # piper
 
     # --- Desktop Tools ---
     pavucontrol
     filezilla
     qbittorrent
     nicotine-plus
-    waywall
-    blender
-    unityhub
+    # waywall
+    # blender
+    # unityhub
     fooyin
+    kdePackages.kdenlive
 
     # --- Desktop Development ---
-    arduino-ide
-    mysql-workbench
-    mysql84
-    multiviewer-for-f1
+    # arduino-ide
+    # mysql-workbench
+    # mysql84
+    # multiviewer-for-f1
   ];
 }

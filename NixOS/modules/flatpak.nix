@@ -7,14 +7,14 @@ let
     "app.zen_browser.zen"
     "org.kde.krita"
     "md.obsidian.Obsidian"
-    # "org.vinegarhq.Sober"
+    "org.vinegarhq.Sober"
     "com.valvesoftware.Steam"
-    # "org.gnome.Calculator"
-    # "com.stremio.Stremio"
+    "org.gnome.Calculator"
+    "com.stremio.Stremio"
     "com.google.Chrome"
     # "io.beekeeperstudio.Studio"
     "rest.insomnia.Insomnia"
-    "org.kde.kdenlive"
+    # "org.kde.kdenlive"
   ];
 in {
   system.userActivationScripts.flatpakManagement = {

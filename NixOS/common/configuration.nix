@@ -3,7 +3,7 @@
 
 {
   imports = [
-    ../flatpak.nix
+    ../modules/flatpak.nix
   ];
 
   # Bootloader

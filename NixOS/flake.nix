@@ -28,12 +28,12 @@
     supportedSystems = [ "x86_64-linux" "aarch64-linux" ];
     forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
 
-    # Helper function to create a NixOS system
-    mkHost = { hostName, hostPath }: nixpkgs.lib.nixosSystem {
+    # Build a NixOS system from a directory under ./hosts
+    mkHost = hostName: nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
 
       modules = [
-        hostPath
+        ./hosts/${hostName}
         home-manager.nixosModules.home-manager
         {
           home-manager = {
@@ -57,30 +57,13 @@
         ambxst-patched = pkgs.callPackage ./pkgs/ambxst-patched { };
       });
 
-    nixosConfigurations = {
-      # Desktop (asphodelus)
-      desktop = mkHost {
-        hostName = "desktop";
-        hostPath = ./hosts/desktop;
-      };
+    nixosConfigurations = rec {
+      desktop = mkHost "desktop";
+      laptop = mkHost "laptop";
 
-      # Keep old name as alias for compatibility
-      asphodelus = mkHost {
-        hostName = "desktop";
-        hostPath = ./hosts/desktop;
-      };
-
-      # Laptop
-      laptop = mkHost {
-        hostName = "laptop";
-        hostPath = ./hosts/laptop;
-      };
-
-      # Laptop alias
-      elysium = mkHost {
-        hostName = "laptop";
-        hostPath = ./hosts/laptop;
-      };
+      # Hostname aliases (asphodelus = desktop, elysium = laptop)
+      asphodelus = desktop;
+      elysium = laptop;
     };
   };
 }

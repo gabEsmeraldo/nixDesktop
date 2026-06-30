@@ -39,10 +39,11 @@ in
 {
   imports = [
     inputs.nixcord.homeModules.nixcord
-    ../zsh.nix
+    ../modules/zsh.nix
     ./apps.nix
     ../modules/matugen.nix
     ../modules/spicetify.nix
+    ../modules/hyprland-conf.nix
   ];
 
   home.username = "gabzu";
@@ -186,6 +187,7 @@ in
 
   # Shared config files
   home.file.".config/fastfetch".source = ./fastfetch;
+  home.file.".config/hypr/decorations.conf".source = ./hypr/decorations.conf;
   home.file.".config/hypr/nix-generated.conf".text = ''
     exec-once = dbus-update-activation-environment --systemd DISPLAY HYPRLAND_INSTANCE_SIGNATURE WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE && systemctl --user stop hyprland-session.target && systemctl --user start hyprland-session.target
 

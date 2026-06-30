@@ -32,11 +32,9 @@
     libsecret
     codex
     claude-code
-    claude-monitor
-    parsec-bin
+    # parsec-bin
 
     # --- Editors & IDEs ---
-    vim
     neovim
     vscode
     code-cursor
@@ -61,13 +59,13 @@
     nodemon
 
     # --- Communication & Social ---
-    anytype
-    joplin-desktop
+    # anytype
+    # joplin-desktop
     vlc
     telegram-desktop
     obs-studio
     localsend
-    vivaldi
+    # vivaldi
 
     # --- Life ---
     libreoffice

@@ -30,21 +30,17 @@ in
   home.sessionVariables.HYPRLAND_PLUGIN_DIR =
     "${pkgs.hyprlandPlugins.hyprsplit}/lib";
 
-  home.activation.writeHyprlandConfig = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    mkdir -p "$HOME/.config/hypr"
-    rm -f "$HOME/.config/hypr/hyprland.conf"
-    cat > "$HOME/.config/hypr/hyprland.conf" <<EOF
-source=${config.home.homeDirectory}/.config/hypr/decorations.conf
-source=${config.home.homeDirectory}/.config/hypr/keybinds.conf
-source=${config.home.homeDirectory}/.config/hypr/envrules.conf
-source=${config.home.homeDirectory}/.config/hypr/monitors.conf
-source=${config.home.homeDirectory}/.config/hypr/wallpaper.conf
-source=${config.home.homeDirectory}/.local/share/ambxst/hyprland.conf
-source=${config.home.homeDirectory}/.config/hypr/nix-generated-desktop.conf
-source=${config.home.homeDirectory}/.config/hypr/nix-generated.conf
-source=${config.home.homeDirectory}/.config/hypr/execs.conf
-EOF
-  '';
+  hyprland.confSources = [
+    ".config/hypr/decorations.conf"
+    ".config/hypr/keybinds.conf"
+    ".config/hypr/envrules.conf"
+    ".config/hypr/monitors.conf"
+    ".config/hypr/wallpaper.conf"
+    ".local/share/ambxst/hyprland.conf"
+    ".config/hypr/nix-generated-desktop.conf"
+    ".config/hypr/nix-generated.conf"
+    ".config/hypr/execs.conf"
+  ];
 
   # Desktop Hyprland config files
   home.file = {
@@ -62,7 +58,6 @@ EOF
       Terminal=false
       Type=Application
     '';
-    ".config/hypr/decorations.conf".source = ../../common/hypr/decorations.conf;
     ".config/hypr/keybinds.conf".source = ./hypr/keybinds.conf;
     ".config/hypr/envrules.conf".source = ./hypr/envrules.conf;
     ".config/hypr/monitors.conf".source = ./hypr/monitors.conf;
