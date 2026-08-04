@@ -7,12 +7,19 @@
   ];
 
   # Bootloader
+  # GRUB instead of systemd-boot: the ESP is 200 MB and shared with Windows,
+  # and systemd-boot copies every generation's kernel + initrd onto it. GRUB
+  # leaves those in /nix/store on the ext4 root and only writes a small stub.
   boot.loader = {
-    systemd-boot = {
-      enable = true;
-      configurationLimit = 5;
-    };
+    systemd-boot.enable = false;
     efi.canTouchEfiVariables = true;
+    grub = {
+      enable = true;
+      efiSupport = true;
+      device = "nodev";       # UEFI: don't write to any disk MBR
+      useOSProber = true;     # detect and add the Windows entry
+      configurationLimit = 5; # cheap now — kernels live on ext4 root
+    };
   };
 
   # Automatic garbage collection
